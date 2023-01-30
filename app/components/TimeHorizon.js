@@ -1,16 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState,useContext } from 'react';
 
 import { View, StyleSheet, Image } from 'react-native';
 import AppButton from './AppButton';
 import AppText from './AppText';
 import AppTextInput from './AppTextInput';
+import StoreContext from '../screens/GlobalState';
+
 
 function TimeHorizon(props) {
-  
+  const contextData = useContext(StoreContext);
     const [value, setValue] =useState('');
 
     const handleProceed=()=>{
-        console.log(value)
+        console.log(value);
+        contextData.setStep(2);
     }
 
     return (

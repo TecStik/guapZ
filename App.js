@@ -14,7 +14,7 @@ import RegisterScreen from './app/screens/RegisterScreen';
 
 export default function App() {
   const [goals,setGoals]= useState(["testing"]);
-  const [step,setStep]= useState(2);
+  const [step,setStep]= useState(0);
 
   return (
     // <Banner/>

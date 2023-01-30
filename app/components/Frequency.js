@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState,useContext } from 'react';
 
 import { View, StyleSheet, Image } from 'react-native';
 import AppButton from './AppButton';
 import AppText from './AppText';
 import AppTextInput from './AppTextInput';
 import ToggleButton from './ToggleButton';
+import StoreContext from '../screens/GlobalState';
 
 function Frequency(props) {
-  
+  const contextData = useContext(StoreContext);
     const [value, setValue] =useState('');
     
     const [monthly, setMonthly] =useState(false);
@@ -16,7 +17,8 @@ function Frequency(props) {
     const [annual, setAnnual] =useState(false);
 
     const handleProceed=()=>{
-        console.log(value)
+        console.log(value);
+        contextData.setStep(0);
     }
     const handleMonthly=()=>{
       console.log('handleMonthly');
