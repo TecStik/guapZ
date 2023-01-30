@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
-
+import React, { useState,useContext } from 'react';
+import StoreContext from '../screens/GlobalState';
 import { View, StyleSheet, Image } from 'react-native';
 import AppButton from './AppButton';
 import AppText from './AppText';
 import AppTextInput from './AppTextInput';
 
 function TargetAmount(props) {
-  
+  const contextData = useContext(StoreContext);
     const [value, setValue] =useState('');
 
     const handleProceed=()=>{
+      const nextstep=parseInt(contextData.step)+1
+      contextData.setStep(nextstep);
         console.log(value)
     }
 

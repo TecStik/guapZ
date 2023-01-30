@@ -13,7 +13,8 @@ function TimeHorizon(props) {
 
     const handleProceed=()=>{
         console.log(value);
-        contextData.setStep(2);
+        const nextstep=parseInt(contextData.step)+1
+        contextData.setStep(nextstep);
     }
 
     return (
@@ -33,7 +34,7 @@ function TimeHorizon(props) {
         </View>
         <AppTextInput
             icon='cash-multiple'
-            placeholder={'Target Amount'}
+            placeholder={'Time Horizon'}
             keyboardType='numeric'
             value={value}
             onChangeText={setValue}
