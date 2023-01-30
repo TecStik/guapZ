@@ -25,7 +25,7 @@ function TimeHorizon(props) {
         </View>
         <View style={{width: '100%', height: 50, alignItems: 'center'}}>
             <AppText>
-                What is your target amount?
+                What is your target time Horizon?
             </AppText>
         </View>
         <AppTextInput
