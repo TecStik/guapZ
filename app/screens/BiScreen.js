@@ -4,7 +4,7 @@ import { View, StyleSheet, ScrollView } from 'react-native';
 import AppText from '../components/AppText';
 import AppTextInput from '../components/AppTextInput';
 import BackContainer from '../components/BackContainer';
-import Banner from '../components/Banner';
+import MultiBanner from '../components/MultiBanner';
 import Frequency from '../components/Frequency';
 import Screen from '../components/Screen';
 import TargetAmount from '../components/TargetAmount';
@@ -19,7 +19,7 @@ function BiScreen(props) {
   return (
     <Screen>
         <BackContainer/>
-        <Banner/>
+        <MultiBanner/>
         <ScrollView>
           {(contextData.step=="0")?
             <TimeHorizon/>:<></>

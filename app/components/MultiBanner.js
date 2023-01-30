@@ -1,17 +1,25 @@
 import {React,useContext,useState} from 'react';
 
 import { View, StyleSheet, Image, Dimensions } from 'react-native';
+import StoreContext from '../screens/GlobalState';
 
 const {height, width}= Dimensions.get('window');
-function Banner(props) {
+function MultiBanner(props) {
+    const contextData = useContext(StoreContext);
   const banners= useState(['../assets/genZbanner.png','../assets/targetAmount.png','../assets/timeHorizon.png']);
   console.log(Dimensions.get('window'));
   return (
     <View style={styles.container}>
-        <Image
-            source={require('../assets/genZbanner.png')}
-            style={styles.banner}
-        />
+        
+             {(contextData.step=="0")?
+            <Image source={require('../assets/timeHorizon.png')}style={styles.banner}/>:<></>
+          }
+           {(contextData.step=="1")?
+             <Image source={require('../assets/targetAmount.png')}style={styles.banner}/>:<></>
+          }
+          {(contextData.step=="2")?
+             <Image source={require('../assets/frequency.png')}style={styles.banner}/>:<></>
+          }
     </View>
   );
 }
@@ -32,4 +40,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Banner;
+export default MultiBanner;
