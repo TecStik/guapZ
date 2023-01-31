@@ -6,6 +6,7 @@ import AppTextInput from '../components/AppTextInput';
 import BackContainer from '../components/BackContainer';
 import Banner from '../components/Banner';
 import Frequency from '../components/Frequency';
+import RiskAssessmentResult from '../components/RiskAssessmentResult';
 import Screen from '../components/Screen';
 import TargetAmount from '../components/TargetAmount';
 import TimeHorizon from '../components/TimeHorizon';
@@ -18,7 +19,8 @@ function BiScreen(props) {
         <ScrollView>
             {/* <TimeHorizon/> */}
             {/* <TargetAmount/> */}
-            <Frequency/>
+            {/* <Frequency/> */}
+            <RiskAssessmentResult/>
         </ScrollView>
     </Screen>
   );
