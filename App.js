@@ -7,6 +7,7 @@ import { StoreProvider } from './app/screens/GlobalState';
 
 import ImageAppButton from './app/components/ImageAppButton';
 import BiScreen from './app/screens/BiScreen';
+import  RiskQuestionaire from './app/screens/RiskQuestionaire';
 import MultipleChoiceScreen from './app/screens/MultipleChoiceScreen';
 import MultipleOptionScreen from './app/screens/MultipleOptionScreen';
 import OptionScreen from './app/screens/OptionScreen';
@@ -26,8 +27,8 @@ export default function App() {
     // <MultipleChoiceScreen/>
   
     <StoreProvider value={{  goals,setGoals,step,setStep }}>
-
-      <BiScreen/>
+< RiskQuestionaire/>
+     {/* <BiScreen/> */}
     </StoreProvider>
   );
 }
