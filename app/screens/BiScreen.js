@@ -11,6 +11,7 @@ import Screen from '../components/Screen';
 import TargetAmount from '../components/TargetAmount';
 import TimeHorizon from '../components/TimeHorizon';
 import StoreContext from './GlobalState';
+import InvestmentPlanSummary from '../components/InvestmentPlanSummary';
 
 
 function BiScreen(props) {
@@ -22,7 +23,7 @@ function BiScreen(props) {
         <BackContainer/>
         <MultiBanner/>
         <ScrollView>
-          {(contextData.step=="0")?
+          {/* {(contextData.step=="0")?
             <TimeHorizon/>:<></>
           }
            {(contextData.step=="1")?
@@ -33,9 +34,11 @@ function BiScreen(props) {
           }
           {(contextData.step=="3")?
             <RiskAssessmentResult/> :<></>
-          }
+          } */}
             {/* <TargetAmount/> */}
             {/* <Frequency/> */}
+            {/* <RiskAssessmentResult/> */}
+            {/* <InvestmentPlanSummary/> */}
         </ScrollView>
     </Screen>
   );

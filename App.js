@@ -12,6 +12,8 @@ import MultipleChoiceScreen from './app/screens/MultipleChoiceScreen';
 import MultipleOptionScreen from './app/screens/MultipleOptionScreen';
 import OptionScreen from './app/screens/OptionScreen';
 import RegisterScreen from './app/screens/RegisterScreen';
+import InvestmentPlanSummaryScreen from './app/screens/InvestmentPlanSummaryScreen';
+import GuazBackContainer from './app/components/GuazBackContainer';
 
 export default function App() {
   const [goals,setGoals]= useState(["testing"]);
@@ -20,16 +22,18 @@ export default function App() {
   return (
     // <Banner/>
     // <ImageAppButton/>
+    <GuazBackContainer/>
 
     // <RegisterScreen/>
     // <OptionScreen/>
     // <MultipleOptionScreen/>
     // <MultipleChoiceScreen/>
   
-    <StoreProvider value={{  goals,setGoals,step,setStep }}>
-< RiskQuestionaire/>
-     {/* <BiScreen/> */}
-    </StoreProvider>
+//     <StoreProvider value={{  goals,setGoals,step,setStep }}>
+// < RiskQuestionaire/>
+//      <BiScreen/>
+//      <InvestmentPlanSummaryScreen/>
+//     </StoreProvider>
   );
 }
 
