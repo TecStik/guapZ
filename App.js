@@ -14,6 +14,7 @@ import OptionScreen from './app/screens/OptionScreen';
 import RegisterScreen from './app/screens/RegisterScreen';
 import InvestmentPlanSummaryScreen from './app/screens/InvestmentPlanSummaryScreen';
 import GuazBackContainer from './app/components/GuazBackContainer';
+import AdjustmentPlanScreen from './app/screens/AdjustmentPlanScreen';
 
 export default function App() {
   const [goals,setGoals]= useState(["testing"]);
@@ -28,7 +29,7 @@ export default function App() {
     // <OptionScreen/>
     // <MultipleOptionScreen/>
     // <MultipleChoiceScreen/>
-  
+    // <AdjustmentPlanScreen/>
 //     <StoreProvider value={{  goals,setGoals,step,setStep }}>
 // < RiskQuestionaire/>
 //      <BiScreen/>
