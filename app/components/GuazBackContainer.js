@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { View, StyleSheet, TouchableHighlight, Image } from 'react-native';
+import AppText from './AppText';
 
 function GuazBackContainer(props) {
 
@@ -24,7 +25,12 @@ function GuazBackContainer(props) {
                     </TouchableHighlight>
                 </View>
             </View>
-            
+            <View>
+                <Image
+                    source={require('../assets/headerGuapZ.png')}
+                    style={styles.banner}
+                />
+            </View>
         </View>
     );
 }
@@ -34,6 +40,7 @@ const styles = StyleSheet.create({
         width: '100%',
         height: 150,
         backgroundColor: '#084877',
+        // backgroundColor:'yellow',
     },
     
     topContainer:{
@@ -52,6 +59,10 @@ const styles = StyleSheet.create({
         height: 30,
         width: 30,
     },
+    banner:{
+        width: '100%',
+        height: '85%',
+    }
 });
 
 export default GuazBackContainer;

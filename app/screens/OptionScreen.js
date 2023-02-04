@@ -4,6 +4,8 @@ import { View, StyleSheet } from 'react-native';
 import AppButton from '../components/AppButton';
 import BackContainer from '../components/BackContainer';
 import Banner from '../components/Banner';
+import BigAppButton from '../components/BigAppButton';
+import GuazBackContainer from '../components/GuazBackContainer';
 import Screen from '../components/Screen';
 
 function OptionScreen(props) {
@@ -18,14 +20,13 @@ function OptionScreen(props) {
 
   return (
     <Screen>
-        <BackContainer/>
-        <Banner/>
+        <GuazBackContainer/>
         <View style={styles.container}>
-            <AppButton
+            <BigAppButton
                 title={'Thematic Portfolios'}
                 onPress={handleThematicPortfolios}
             />
-            <AppButton
+            <BigAppButton
                 title={'Goal Base Investment'}
                 onPress={handleGoalBaseInvestment}
             />
@@ -36,8 +37,8 @@ function OptionScreen(props) {
 
 const styles = StyleSheet.create({
   container:{
-    flex: 0.8,
-    justifyContent: 'space-around'
+    flex: 1,
+    justifyContent: 'space-evenly'
   },
 });
 

@@ -15,6 +15,8 @@ import RegisterScreen from './app/screens/RegisterScreen';
 import InvestmentPlanSummaryScreen from './app/screens/InvestmentPlanSummaryScreen';
 import GuazBackContainer from './app/components/GuazBackContainer';
 import AdjustmentPlanScreen from './app/screens/AdjustmentPlanScreen';
+import SliderComponent from './app/components/SliderComponent';
+import AboutYourSelfScreen from './app/screens/AboutYourSelfScreen';
 
 export default function App() {
   const [goals,setGoals]= useState(["testing"]);
@@ -23,13 +25,15 @@ export default function App() {
   return (
     // <Banner/>
     // <ImageAppButton/>
-    <GuazBackContainer/>
+    // <GuazBackContainer/>
+    // <SliderComponent/>
 
     // <RegisterScreen/>
-    // <OptionScreen/>
+    <OptionScreen/>
     // <MultipleOptionScreen/>
     // <MultipleChoiceScreen/>
     // <AdjustmentPlanScreen/>
+    // <AboutYourSelfScreen/>
 //     <StoreProvider value={{  goals,setGoals,step,setStep }}>
 // < RiskQuestionaire/>
 //      <BiScreen/>

@@ -20,7 +20,7 @@ function Screen({children,style}) {
 const styles = StyleSheet.create({
     screen:{
         flex: 1,
-        padding: 5,
+        // padding: 5,
         // backgroundColor: colors.background,
     },
 })

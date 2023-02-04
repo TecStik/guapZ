@@ -1,54 +1,41 @@
 import React, { useState } from 'react';
 
-import { View, StyleSheet, Text, Dimensions } from 'react-native';
+import { View, StyleSheet, Text, Dimensions, Image } from 'react-native';
 
 
-// import Slider from '@react-native-community/slider';
+import Slider from '@react-native-community/slider';
 
-import { Slider } from 'react-native-awesome-slider';
+// import { Slider } from 'react-native-awesome-slider';
 
 const {height, width}= Dimensions.get('window');
 
 
-function SliderComponent(props) {
+function SliderComponent({ high, low, thumbSize = 2,onPress, value }) {
     const [data, setSliderData] = useState(10);
-    const progress = useSharedValue(30);
-    const min = useSharedValue(0);
-    const max = useSharedValue(100);
     return (
         <View style={styles.container}>
 
-            {/* <View style={styles.display}>
-                <Text>{data}</Text>
-            </View> */}
+            <View style={styles.display}>
+                <Text style={styles.valueText}>
+                    {value}
+                </Text>
+            </View>
 
 
             <View style={styles.slider}>
-                {/* <Slider
-                    maximumValue={100}
-                    minimumValue={0}
-                    minimumTrackTintColor="#D50000"
-                    maximumTrackTintColor="#01579B"
-                    step={1}
-                    value={data}
-                    onValueChange={
-                    (sliderValue) => setSliderData(sliderValue)
-                    }
-                    // thumbTintColor="#1B5E20"
-                    thumbImage={"../assetsfavicon.png/"}
-                    style={{width: '90%',  }}
-                /> */}
-
                 <Slider
-                    // style={styles.container}
-                    progress={progress}
-                    minimumValue={min}
-                    maximumValue={max}
+                    maximumValue={high}
+                    minimumValue={low}
+                    minimumTrackTintColor="#122D53"
+                    maximumTrackTintColor="blue"
+                    step={1}
+                    value={value}
+                    onValueChange={onPress}
+                    // thumbTintColor="#1B5E20"
+                    thumbImage={require('../assets/GuapZ.png')}
+                    style={{width: '50%',  transform: [{ scaleX: thumbSize }, { scaleY: thumbSize }]}} 
                 />
             </View>
-            {/* <Text style={{ fontSize: 28 }}>
-        Value of slider is : {data}
-      </Text> */}
         </View>
     );
 }
@@ -58,20 +45,29 @@ const styles = StyleSheet.create({
         width: width,
         height: 80,
         alignItems:'center',
-        backgroundColor: 'red',
+        justifyContent: 'center',
         flexDirection: 'row',
     },
     display:{
-        width: '25%',
+        width: '20%',
         height: '70%',
-        backgroundColor: 'pink',
+        backgroundColor: 'white',
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderWidth: 3,
+        borderRadius: 15,
+    },
+    valueText:{
+        fontSize: 30,
+        fontWeight: 'bold',
     },
     slider:{
-        width: '75%',
-        height: '70%',
+        width: '70%',
+        height: '90%',
         justifyContent: 'center',
         alignItems:'center',
-        backgroundColor: 'yellow',
+        // backgroundColor: 'yellow',
+        
     },
 });
 
