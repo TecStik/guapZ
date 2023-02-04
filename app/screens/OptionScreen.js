@@ -1,9 +1,7 @@
 import React from 'react';
 
 import { View, StyleSheet } from 'react-native';
-import AppButton from '../components/AppButton';
-import BackContainer from '../components/BackContainer';
-import Banner from '../components/Banner';
+
 import BigAppButton from '../components/BigAppButton';
 import GuazBackContainer from '../components/GuazBackContainer';
 import Screen from '../components/Screen';

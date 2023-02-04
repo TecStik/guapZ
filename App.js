@@ -29,11 +29,11 @@ export default function App() {
     // <SliderComponent/>
 
     // <RegisterScreen/>
-    <OptionScreen/>
+    // <OptionScreen/>
     // <MultipleOptionScreen/>
     // <MultipleChoiceScreen/>
     // <AdjustmentPlanScreen/>
-    // <AboutYourSelfScreen/>
+    <AboutYourSelfScreen/>
 //     <StoreProvider value={{  goals,setGoals,step,setStep }}>
 // < RiskQuestionaire/>
 //      <BiScreen/>
