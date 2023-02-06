@@ -82,17 +82,7 @@ function InvestmentPlanSummaryScreen(props) {
                 onPress={handleAdjust}
             />
         </View>
-
-
-
-        
-
-
-
-
-
             </ScrollView>
-
         </Screen>
     );
 }

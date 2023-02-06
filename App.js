@@ -17,6 +17,10 @@ import GuazBackContainer from './app/components/GuazBackContainer';
 import AdjustmentPlanScreen from './app/screens/AdjustmentPlanScreen';
 import SliderComponent from './app/components/SliderComponent';
 import AboutYourSelfScreen from './app/screens/AboutYourSelfScreen';
+import FundYourAccountScreen from './app/screens/FundYourAccountScreen';
+import E_WalletScreen from './app/screens/E_WalletScreen';
+import PortFolioPositionScreen from './app/screens/PortFolioPositionScreen';
+import ReportScreen from './app/screens/ReportScreen';
 
 export default function App() {
   const [goals,setGoals]= useState(["testing"]);
@@ -33,7 +37,12 @@ export default function App() {
     // <MultipleOptionScreen/>
     // <MultipleChoiceScreen/>
     // <AdjustmentPlanScreen/>
-    <AboutYourSelfScreen/>
+    // <AboutYourSelfScreen/>
+    // <FundYourAccountScreen/>
+    // <E_WalletScreen/>
+    // <PortFolioPositionScreen/>
+    <ReportScreen/>
+
 //     <StoreProvider value={{  goals,setGoals,step,setStep }}>
 // < RiskQuestionaire/>
 //      <BiScreen/>
