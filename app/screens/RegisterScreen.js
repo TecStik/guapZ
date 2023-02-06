@@ -20,11 +20,12 @@ const validationSchema = Yup.object().shape({
 });
 
 
-function RegisterScreen(props) {
+function RegisterScreen({ navigation }) {
 
 
     const Register=(values)=>{
         console.log(values);
+        navigation.navigate('Option Screen');
     }   
   return (
     <Screen>

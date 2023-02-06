@@ -2,6 +2,10 @@ import { useState,useEffect } from 'react';
 
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+
+import { NavigationContainer } from '@react-navigation/native';
+
+
 import Banner from './app/components/Banner';
 import { StoreProvider } from './app/screens/GlobalState';
 
@@ -21,6 +25,7 @@ import FundYourAccountScreen from './app/screens/FundYourAccountScreen';
 import E_WalletScreen from './app/screens/E_WalletScreen';
 import PortFolioPositionScreen from './app/screens/PortFolioPositionScreen';
 import ReportScreen from './app/screens/ReportScreen';
+import AuthNavigator from './app/navigation/AuthNavigator';
 
 export default function App() {
   const [goals,setGoals]= useState(["testing"]);
@@ -41,13 +46,20 @@ export default function App() {
     // <FundYourAccountScreen/>
     // <E_WalletScreen/>
     // <PortFolioPositionScreen/>
-    <ReportScreen/>
+    // <ReportScreen/>
 
 //     <StoreProvider value={{  goals,setGoals,step,setStep }}>
 // < RiskQuestionaire/>
 //      <BiScreen/>
 //      <InvestmentPlanSummaryScreen/>
 //     </StoreProvider>
+
+    <NavigationContainer>
+      <AuthNavigator/>
+    </NavigationContainer>
+
+
+
   );
 }
 
