@@ -9,11 +9,13 @@ import Screen from '../components/Screen';
 function OptionScreen(props) {
 
     const handleThematicPortfolios=()=>{
-        console.log('handleThematicPortfolios')
+        console.log('handleThematicPortfolios');
+        props.navigation.navigate("select Theme");
     }
 
     const handleGoalBaseInvestment=()=>{
-        console.log('handleGoalBaseInvestment')
+        console.log('handleGoalBaseInvestment');
+        props.navigation.navigate("select Goal");
     }
 
   return (

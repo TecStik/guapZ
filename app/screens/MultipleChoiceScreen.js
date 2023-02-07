@@ -43,9 +43,10 @@ const listings = [
 
 
 function MultipleChoiceScreen(props) {
+  console.log("propsin Mutiple coice",props)
   return (
     <Screen>
-        <BackContainer/>
+        <BackContainer navigation={props.navigation} title={" None"}/>
         <Banner/>
         <FlatList 
             data={listings}

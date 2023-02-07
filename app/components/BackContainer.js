@@ -5,7 +5,8 @@ import { View, StyleSheet, Image, TouchableHighlight } from 'react-native';
 function BackContainer(props) {
 
     const handleBack=()=>{
-        console.log('handleBack')
+        console.log('handleBack',props);
+        props.navigation.goBack();
     }
 
   return (
