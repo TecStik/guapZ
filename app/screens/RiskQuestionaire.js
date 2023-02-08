@@ -1,10 +1,10 @@
 import React, { useState,useContext } from "react";
-import { FlatList, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { FlatList, SafeAreaView, StatusBar,ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 //import AppText from '../components/AppText';
 import Screen from '../components/Screen';
 import AppButton from '../components/AppButton';
 import StoreContext from './GlobalState'
-
+import GuazBackContainer from '../components/GuazBackContainer';
 //import Card from '../components/Card';
 import {riskQuestions} from './supportingfiles/dummydata';
 // import Header from "../components/Header";
@@ -102,15 +102,16 @@ console.log("RiskScore",score);
     return (
       <Screen>
         {/* <Header/> */}
+        <GuazBackContainer/>
           <Text style={styles.text}>{questionData[questionId].Description}</Text>
-           <SafeAreaView style={styles.container}>
+           <ScrollView style={styles.container}>
       <FlatList
         data={questionData[questionId].Options}
         renderItem={renderItem}
         keyExtractor={(item, index) => index}
         extraData={selectedId}
       />
-    </SafeAreaView>
+    </ScrollView>
 
 
 

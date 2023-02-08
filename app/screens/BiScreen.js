@@ -23,7 +23,7 @@ function BiScreen(props) {
         <BackContainer/>
         <MultiBanner/>
         <ScrollView>
-          {/* {(contextData.step=="0")?
+          {(contextData.step=="0")?
             <TimeHorizon/>:<></>
           }
            {(contextData.step=="1")?
@@ -34,7 +34,7 @@ function BiScreen(props) {
           }
           {(contextData.step=="3")?
             <RiskAssessmentResult/> :<></>
-          } */}
+          }
             {/* <TargetAmount/> */}
             {/* <Frequency/> */}
             {/* <RiskAssessmentResult/> */}

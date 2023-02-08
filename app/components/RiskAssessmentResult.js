@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState,useContext } from 'react';
+import StoreContext from '../screens/GlobalState';
 
 import { View, StyleSheet, Text,TouchableOpacity } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -8,8 +9,9 @@ import Counter from './Counter';
 import AppButton from './AppButton';
 
 function RiskAssessmentResult(props) {
-
-    const [count, setCount] = useState(0);
+    const contextData = useContext(StoreContext);
+    console.log("contextData,",contextData)
+    const [count, setCount] = useState(contextData.riskScore);
 
     const handleProceed=()=>{
         console.log(count)

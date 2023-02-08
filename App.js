@@ -30,6 +30,7 @@ import AuthNavigator from './app/navigation/AuthNavigator';
 export default function App() {
   const [goals,setGoals]= useState(["testing"]);
   const [step,setStep]= useState(3);
+  const [riskScore,setRiskScore]= useState(5);
 
   return (
     // <Banner/>
@@ -48,15 +49,13 @@ export default function App() {
     // <PortFolioPositionScreen/>
     // <ReportScreen/>
 
-//     <StoreProvider value={{  goals,setGoals,step,setStep }}>
-// < RiskQuestionaire/>
-//      <BiScreen/>
-//      <InvestmentPlanSummaryScreen/>
-//     </StoreProvider>
-
-    <NavigationContainer>
+    <StoreProvider value={{  goals,setGoals,step,setStep,riskScore,setRiskScore }}>
+  <NavigationContainer>
       <AuthNavigator/>
     </NavigationContainer>
+    </StoreProvider>
+
+  
 
 
 
