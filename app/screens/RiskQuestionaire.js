@@ -40,21 +40,29 @@ function RiskQuestionaire({navigation},props) {
   const [selectedOption, setSelectedOption] = useState(null);
     const [selectedId, setSelectedId] = useState(null);
     const [questionId, setquestionId] = useState(0);
+    const [riskProfile, setRiskProfile] = useState([]);
     const handlepress=async(id,item)=> {
         setSelectedId(id);
         setSelectedOption(item);
-        console.log("selected option",item)
+        console.log("selected option",questionData[questionId].Weightage,item);
         if(questionId<questionData.length){
   // setquestionId(questionId+1);
         }else{
+          console.log("Risk Profile",)
           alert("no moreQuest");
           navigation.navigate('CreateNewPotScreen')
         }
   
     }
     const handleNext=async()=> {
+let riskresponse={
+  QId:questionData[questionId].QId,
+  weightage:questionData[questionId].Weightage,
+  option:selectedOption
 
-     console.log("in handleNext",questionData[questionId].QId,selectedOption);
+}
+setRiskProfile(riskProfile.push(riskresponse));
+     console.log("in handleNext",riskprofile);
           if(questionId<questionData.length-1){
  setquestionId(questionId+1);
       }else{

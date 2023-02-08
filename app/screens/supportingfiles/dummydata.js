@@ -43,7 +43,7 @@ contribution:"what will be your periodic contribution"
     "QuizOptionKey": 2021
     }
     ],
-    "Weightage": "75",
+    "Weightage": "50",
     "createdOn": "2022-09-15T12:59:09.873Z",
     "__v": 0
     },
@@ -84,7 +84,7 @@ contribution:"what will be your periodic contribution"
     "QuizOptionKey": 8242
     }
     ],
-    "Weightage": "25",
+    "Weightage": "30",
     "createdOn": "2022-10-14T14:24:43.664Z",
     "__v": 0
     },
@@ -115,11 +115,14 @@ contribution:"what will be your periodic contribution"
     "QuizOptionKey": 7860
     }
     ],
-    "Weightage": "eweqwaza",
+    "Weightage": "20",
     "createdOn": "2022-10-14T15:39:23.664Z",
     "__v": 0
     }
     ]
+     export const Weightages=[
+
+     ]
    
 //    [
 //     {
