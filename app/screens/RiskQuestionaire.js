@@ -44,14 +44,14 @@ function RiskQuestionaire({navigation},props) {
     const handlepress=async(id,item)=> {
         setSelectedId(id);
         setSelectedOption(item);
-        console.log("selected option",questionData[questionId].Weightage,item);
-        if(questionId<questionData.length){
-  // setquestionId(questionId+1);
-        }else{
-          console.log("Risk Profile",)
-          alert("no moreQuest");
-          navigation.navigate('CreateNewPotScreen')
-        }
+       
+  //       if(questionId<questionData.length){
+  // // setquestionId(questionId+1);
+  //       }else{
+  //         console.log("Risk Profile",)
+  //         alert("no moreQuest");
+    
+  //       }
   
     }
     const handleNext=async()=> {
@@ -61,22 +61,28 @@ let riskresponse={
   option:selectedOption
 
 }
-setRiskProfile(riskProfile.push(riskresponse));
-     console.log("in handleNext",riskprofile);
+let tempRisk= riskProfile;
+tempRisk.push(riskresponse);
+setRiskProfile(tempRisk);
+  
           if(questionId<questionData.length-1){
  setquestionId(questionId+1);
       }else{
         alert("no moreQuest");
-        let riskResponse=contextData.riskResponse;
-        let response={Question:questionData[questionId].QId,
-          selection:selectedOption
-        }
-        riskResponse.push(response);
-        console.log("RisdResponse",riskResponse);
-        navigation.navigate('CreateNewPotScreen')
+        calculateRiskScore(riskProfile);
+       // console.log("RisdResponse",riskProfile);
+     //   navigation.navigate('CreateNewPotScreen');
       }
     
   }
+  async function calculateRiskScore(profile){
+    let score=0;
+    profile.forEach(element => {
+      score+=parseFloat(element.option.QuizValue)*parseFloat(element.weightage)/100;
+      
+    });
+console.log("RiskScore",score);
+  } 
   const renderItem = ({ item,index }) => {
     const backgroundColor = index === selectedId ?  "#104B7D":"#5E88A2";
     const color = index === selectedId ? 'white' : 'black';
