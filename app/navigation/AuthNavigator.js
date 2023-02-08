@@ -6,16 +6,18 @@ import OptionScreen from "../screens/OptionScreen";
 import BiScreen from "../screens/BiScreen";
 import MultipleOptionScreen from "../screens/MultipleOptionScreen";// thematic screen
 import MultipleChoiceScreen from "../screens/MultipleChoiceScreen";// Goal screen
+import RiskQuestionaire from "../screens/RiskQuestionaire";// Risk Ques
 
 const Stack = createNativeStackNavigator();
 
 const AuthNavigator=()=> (
     <Stack.Navigator>
+         <Stack.Screen name='Risk Questionaire' component={RiskQuestionaire} options={{headerShown: false}} />
         <Stack.Screen name='Option Screen' component={OptionScreen} options={{headerShown: false}} />
          <Stack.Screen name='select Goal' component={MultipleChoiceScreen} options={{headerShown: false}}/>
         <Stack.Screen name='select Theme' component={MultipleOptionScreen} options={{headerShown: false}}/>
         <Stack.Screen name='RegisterScreen' component={RegisterScreen} options={{headerShown: false}}/>
-        <Stack.Screen name='Set Foals' component={RegisterScreen} options={{headerShown: false}}/>
+        <Stack.Screen name='Set Goals' component={RegisterScreen} options={{headerShown: false}}/>
     </Stack.Navigator>
 )
 
