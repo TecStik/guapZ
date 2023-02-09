@@ -26,6 +26,8 @@ import E_WalletScreen from './app/screens/E_WalletScreen';
 import PortFolioPositionScreen from './app/screens/PortFolioPositionScreen';
 import ReportScreen from './app/screens/ReportScreen';
 import AuthNavigator from './app/navigation/AuthNavigator';
+import PickerList from './app/components/PickerList';
+import NormalRedemptionScreen from './app/screens/NormalRedemptionScreen';
 
 export default function App() {
   const [goals,setGoals]= useState(["testing"]);
@@ -37,6 +39,7 @@ export default function App() {
     // <ImageAppButton/>
     // <GuazBackContainer/>
     // <SliderComponent/>
+    // <PickerList/>
 
     // <RegisterScreen/>
     // <OptionScreen/>
@@ -48,12 +51,13 @@ export default function App() {
     // <E_WalletScreen/>
     // <PortFolioPositionScreen/>
     // <ReportScreen/>
+    <NormalRedemptionScreen/>
 
-    <StoreProvider value={{  goals,setGoals,step,setStep,riskScore,setRiskScore }}>
-  <NavigationContainer>
-      <AuthNavigator/>
-    </NavigationContainer>
-    </StoreProvider>
+  //   <StoreProvider value={{  goals,setGoals,step,setStep,riskScore,setRiskScore }}>
+  // <NavigationContainer>
+  //     <AuthNavigator/>
+  //   </NavigationContainer>
+  //   </StoreProvider>
 
   
 
