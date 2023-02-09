@@ -28,6 +28,8 @@ import ReportScreen from './app/screens/ReportScreen';
 import AuthNavigator from './app/navigation/AuthNavigator';
 import PickerList from './app/components/PickerList';
 import NormalRedemptionScreen from './app/screens/NormalRedemptionScreen';
+import TickBox from './app/components/TickBox';
+import NormalRedemptionScreen2 from './app/screens/NormalRedemptionScreen2';
 
 export default function App() {
   const [goals,setGoals]= useState(["testing"]);
@@ -40,6 +42,7 @@ export default function App() {
     // <GuazBackContainer/>
     // <SliderComponent/>
     // <PickerList/>
+    // <TickBox/>
 
     // <RegisterScreen/>
     // <OptionScreen/>
@@ -51,7 +54,8 @@ export default function App() {
     // <E_WalletScreen/>
     // <PortFolioPositionScreen/>
     // <ReportScreen/>
-    <NormalRedemptionScreen/>
+    // <NormalRedemptionScreen/>
+    <NormalRedemptionScreen2/>
 
   //   <StoreProvider value={{  goals,setGoals,step,setStep,riskScore,setRiskScore }}>
   // <NavigationContainer>
