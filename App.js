@@ -51,13 +51,13 @@ export default function App() {
     // <E_WalletScreen/>
     // <PortFolioPositionScreen/>
     // <ReportScreen/>
-    <NormalRedemptionScreen/>
+    // <NormalRedemptionScreen/>
 
-  //   <StoreProvider value={{  goals,setGoals,step,setStep,riskScore,setRiskScore }}>
-  // <NavigationContainer>
-  //     <AuthNavigator/>
-  //   </NavigationContainer>
-  //   </StoreProvider>
+    <StoreProvider value={{  goals,setGoals,step,setStep,riskScore,setRiskScore }}>
+  <NavigationContainer>
+      <AuthNavigator/>
+    </NavigationContainer>
+    </StoreProvider>
 
   
 
