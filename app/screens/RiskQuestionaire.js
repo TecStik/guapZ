@@ -102,6 +102,7 @@ console.log("RiskScore",score);
     return (
       <Screen>
         {/* <Header/> */}
+        
         <GuazBackContainer/>
           <Text style={styles.text}>{questionData[questionId].Description}</Text>
            <ScrollView style={styles.container}>
