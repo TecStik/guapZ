@@ -22,7 +22,7 @@ const values = [
 ]
 
 
-function NormalRedemptionScreen(props) {
+function NormalRedemptionScreen2(props) {
     return (
         <Screen>
             <GuazBackContainer/>
@@ -43,49 +43,6 @@ function NormalRedemptionScreen(props) {
                         values={values}
                     />
                 </View>
-
-                <View style={styles.underLine}>
-                    <View style={{width: '60%'}}>
-                        <AppText style={{ fontWeight: 'bold' }}>
-                            Current Unit Balance
-                        </AppText>
-                    </View>
-                    <View style={{width: '40%'}}>
-                        <AppText style={{ textAlign: 'right', fontWeight: 'bold'}}>
-                            world
-                        </AppText>
-                    </View>
-                </View>
-
-                <View style={styles.underLine}>
-                    <View style={{width: '60%'}}>
-                        <AppText style={{ fontWeight: 'bold' }}>
-                            Available Units
-                        </AppText>
-                    </View>
-                    <View style={{width: '40%'}}>
-                        <AppText style={{ textAlign: 'right', fontWeight: 'bold'}}>
-                            world
-                        </AppText>
-                    </View>
-                </View>
-
-                <View style={styles.underLine}>
-                    <View style={{width: '60%'}}>
-                        <AppText style={{ fontWeight: 'bold' }}>
-                            Balance*
-                        </AppText>
-                    </View>
-                    <View style={{width: '40%'}}>
-                        <AppText style={{ textAlign: 'right', fontWeight: 'bold'}}>
-                            world
-                        </AppText>
-                    </View>
-                </View>
-
-                <AppText style={{width: '95%', alignSelf: 'center', paddingVertical: 10 }}>
-                    *Balance in PKR is based on last working day's redemption price.
-                </AppText>
                 
                 <View style={styles.checkBox}>
                     <View style={{width: '50%',}}>
@@ -130,7 +87,38 @@ function NormalRedemptionScreen(props) {
                             style={styles.input}
                         />
                     </View>
-                </View>    
+                </View>
+                
+                <View style={styles.underLine}>
+                    <View style={{ borderBottomWidth: 2, borderBottomColor: '#053E94'}}>
+                        <AppText style={{fontStyle: 'italic', fontWeight: 'bold'}}>
+                            Notes and Disclaimer
+                        </AppText>
+                    </View>
+
+                    <View style={{ borderBottomWidth: 2, borderBottomColor: '#053E94'}}>
+                        <AppText style={{fontStyle: 'italic', fontWeight: 'bold'}}>
+                            View Limit Matrix
+                        </AppText>
+                    </View>
+                </View> 
+
+                <View style={{width: '95%', alignSelf: 'center'}}>
+                    <View style={{ borderWidth: 2, borderColor: '#053E94', backgroundColor: '#CFD9E8', paddingHorizontal: 10}}>
+                        <AppText style={{ fontWeight: 'bold'}}>
+                            Mode of Payment
+                        </AppText>
+                    </View>
+                    <TickBox
+                        title={'Online Transfer'}
+                    />
+                    <TickBox
+                        title={'Cheque'}
+                    />
+                    <TickBox
+                        title={'Demand Draft'}
+                    />
+                </View>
 
 
             </ScrollView>
@@ -147,13 +135,10 @@ const styles = StyleSheet.create({
         fontWeight: '900',
     },
     underLine:{
-        paddingVertical: 12,
-        paddingHorizontal: 10,
-        borderBottomWidth: 2,
-        width: '90%',
-        alignSelf: 'center',
-        borderBottomColor: '#053E94',
-        flexDirection: 'row',
+        width: '100%', 
+        flexDirection: 'row', 
+        justifyContent: 'space-around', 
+        marginVertical: 25
     },
     checkBox:{
         width: '90%',
@@ -169,4 +154,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default NormalRedemptionScreen;
+export default NormalRedemptionScreen2;
