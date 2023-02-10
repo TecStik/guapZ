@@ -8,6 +8,7 @@ import Questionaire from '../components/Questionaire';
 import GuazBackContainer from '../components/GuazBackContainer';
 //import Card from '../components/Card';
 import {riskQuestions} from './supportingfiles/dummydata';
+import RiskAssessmentResult from '../components/RiskAssessmentResult';
 // import Header from "../components/Header";
 
 
@@ -36,8 +37,8 @@ const questionData =riskQuestions;
 
 function RiskQuestionaire({navigation},props) {
   const contextData = useContext(StoreContext);
-  console.log("Total riskQuestions",questionData.length)
 
+  const [showResult, setShowResult] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
     const [selectedId, setSelectedId] = useState(null);
     const [questionId, setquestionId] = useState(0);
@@ -126,7 +127,9 @@ console.log("RiskScore",score);
         
         />
         </View> */}
-        <Questionaire/>
+         {(showResult)?
+            <RiskAssessmentResult/> :<Questionaire setShowResult={setShowResult}/>
+         }
         </Screen>
     );
 }

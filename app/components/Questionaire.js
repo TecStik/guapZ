@@ -33,7 +33,7 @@ const questionData =riskQuestions;
     </TouchableOpacity>
   );
 
-function Questionaire({navigation},props) {
+function Questionaire({navigation,setShowResult},props) {
   const contextData = useContext(StoreContext);
   console.log("Total riskQuestions",questionData.length)
 
@@ -69,19 +69,24 @@ setRiskProfile(tempRisk);
  setquestionId(questionId+1);
       }else{
         alert("no moreQuest");
-        calculateRiskScore(riskProfile);
-       // console.log("RisdResponse",riskProfile);
-     //   navigation.navigate('CreateNewPotScreen');
+       let score= calculateRiskScore(riskProfile);
+       console.log("RiskScore final",score);
+       contextData.setRiskScore(score)
+     setShowResult(true);
       }
     
   }
-  async function calculateRiskScore(profile){
+ function calculateRiskScore(profile){
+    console.log("RisProfile",profile);
     let score=0;
-    profile.forEach(element => {
-      score+=parseFloat(element.option.QuizValue)*parseFloat(element.weightage)/100;
-      
-    });
-console.log("RiskScore",score);
+    for(var i=0;i<profile.length;i++){
+   let element=profile[i];
+      score= score+(parseFloat(element.option.QuizValue)*parseFloat(element.weightage)/100);
+      console.log("RiskScore",score);
+    }
+  
+
+return Math.floor(score);
   } 
   const renderItem = ({ item,index }) => {
     const backgroundColor = index === selectedId ?  "#104B7D":"#5E88A2";

@@ -34,7 +34,7 @@ import NormalRedemptionScreen2 from './app/screens/NormalRedemptionScreen2';
 export default function App() {
   const [goals,setGoals]= useState(["testing"]);
   const [step,setStep]= useState(3);
-  const [riskScore,setRiskScore]= useState(5);
+  const [riskScore,setRiskScore]= useState(0);
 
   return (
     // <Banner/>

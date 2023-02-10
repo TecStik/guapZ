@@ -91,27 +91,27 @@ contribution:"what will be your periodic contribution"
     {
     "_id": "634982abc12688495a93f81e",
     "QId": "oqeq",
-    "Indicator": "1qeooooo",
-    "Description": "118888888",
+    "Indicator": "dependents",
+    "Description": "how many dependents do you have",
     "Options": [
     {
     "QuizValue": "1",
-    "Quizlable": "11",
+    "Quizlable": "0",
     "QuizOptionKey": 7197
     },
     {
-    "QuizValue": "11",
-    "Quizlable": "111",
+    "QuizValue": "2",
+    "Quizlable": "<2",
     "QuizOptionKey": 5831
     },
     {
-    "QuizValue": "11",
-    "Quizlable": "1111",
+    "QuizValue": "3",
+    "Quizlable": "3",
     "QuizOptionKey": 8473
     },
     {
-    "QuizValue": "3",
-    "Quizlable": "33",
+    "QuizValue": "4",
+    "Quizlable": "4",
     "QuizOptionKey": 7860
     }
     ],

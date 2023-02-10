@@ -10,7 +10,7 @@ import AppButton from './AppButton';
 
 function RiskAssessmentResult(props) {
     const contextData = useContext(StoreContext);
-    console.log("contextData,",contextData)
+   
     const [count, setCount] = useState(contextData.riskScore);
 
     const handleProceed=()=>{
