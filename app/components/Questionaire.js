@@ -3,11 +3,10 @@ import { FlatList, SafeAreaView, StatusBar,ScrollView, StyleSheet, Text, Touchab
 //import AppText from '../components/AppText';
 import Screen from '../components/Screen';
 import AppButton from '../components/AppButton';
-import StoreContext from './GlobalState'
-import Questionaire from '../components/Questionaire';
+import StoreContext from '../screens/GlobalState'
 import GuazBackContainer from '../components/GuazBackContainer';
 //import Card from '../components/Card';
-import {riskQuestions} from './supportingfiles/dummydata';
+import {riskQuestions} from '../screens/supportingfiles/dummydata';
 // import Header from "../components/Header";
 
 
@@ -34,7 +33,7 @@ const questionData =riskQuestions;
     </TouchableOpacity>
   );
 
-function RiskQuestionaire({navigation},props) {
+function Questionaire({navigation},props) {
   const contextData = useContext(StoreContext);
   console.log("Total riskQuestions",questionData.length)
 
@@ -101,11 +100,8 @@ console.log("RiskScore",score);
   };
 
     return (
-      <Screen>
-     
-        
-        <GuazBackContainer/>
-        {/* <View style={styles.container}>
+      
+        <View style={styles.container}>
           <Text style={styles.text}>{questionData[questionId].Description}</Text>
            <ScrollView style={styles.container}>
       <FlatList
@@ -117,7 +113,7 @@ console.log("RiskScore",score);
     </ScrollView>
 
 
-    </View>
+  
 
     <View style={styles.Button}>
         <AppButton 
@@ -125,9 +121,8 @@ console.log("RiskScore",score);
           onPress={handleNext }
         
         />
-        </View> */}
-        <Questionaire/>
-        </Screen>
+        </View>
+        </View>
     );
 }
 
@@ -157,4 +152,4 @@ const styles = StyleSheet.create({
     },
   });
 
-export default RiskQuestionaire;
+export default Questionaire;
