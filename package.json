@@ -18,7 +18,8 @@
     "react": "18.1.0",
     "react-native": "0.70.5",
     "react-native-dropdown-select-list": "^2.0.4",
-    "yup": "^0.32.11"
+    "yup": "^0.32.11",
+    "expo-checkbox": "~2.2.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"

@@ -5,7 +5,7 @@ import { View, StyleSheet, } from 'react-native';
 import { SelectList } from 'react-native-dropdown-select-list'
 
 
-function PickerList({ placeHolder }) {
+function PickerList({ placeHolder, values }) {
 
 
     const [selected, setSelected] = useState("");
@@ -24,7 +24,7 @@ function PickerList({ placeHolder }) {
         <View style={styles.container}>
             <SelectList 
                 setSelected={(val) => setSelected(val)} 
-                data={data} 
+                data={values} 
                 save="value"
                 boxStyles={{borderRadius: 0, borderWidth: 2, borderColor: '#CFD9E8', backgroundColor: 'white', margin: 5}}
                 
