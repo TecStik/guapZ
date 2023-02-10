@@ -55,6 +55,7 @@ export default function App() {
     // <PortFolioPositionScreen/>
     // <ReportScreen/>
     // <NormalRedemptionScreen/>
+   // <NormalRedemptionScreen2/>
 
     <StoreProvider value={{  goals,setGoals,step,setStep,riskScore,setRiskScore }}>
   <NavigationContainer>
