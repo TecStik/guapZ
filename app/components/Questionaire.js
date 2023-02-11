@@ -89,7 +89,7 @@ setRiskProfile(tempRisk);
 return Math.floor(score);
   } 
   const renderItem = ({ item,index }) => {
-    const backgroundColor = index === selectedId ?  "#104B7D":"#5E88A2";
+    const backgroundColor = index === selectedId ?  "#122D53":"#ffffff";
     const color = index === selectedId ? 'white' : 'black';
 
 
@@ -120,13 +120,13 @@ return Math.floor(score);
 
   
 
-    <View style={styles.Button}>
+    {/* <View style={styles.Button}> */}
         <AppButton 
           title='Continue'
           onPress={handleNext }
         
         />
-        </View>
+        {/* </View> */}
         </View>
     );
 }
@@ -143,9 +143,13 @@ const styles = StyleSheet.create({
       marginTop: StatusBar.currentHeight || 0,
     },
     item: {
-      padding: 20,
+      paddingVertical: 20,
+      paddingLeft: 30,
       marginVertical: 8,
       marginHorizontal: 16,
+      borderRadius: 20,
+      borderWidth: 1,
+      borderColor: 'blue',
     },
     title: {
       fontSize: 22,

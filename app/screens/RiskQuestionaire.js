@@ -86,7 +86,7 @@ setRiskProfile(tempRisk);
 console.log("RiskScore",score);
   } 
   const renderItem = ({ item,index }) => {
-    const backgroundColor = index === selectedId ?  "#104B7D":"#5E88A2";
+    const backgroundColor = index === selectedId ?  "#104B7D":"#ff0000";
     const color = index === selectedId ? 'white' : 'black';
 
 
