@@ -3,12 +3,10 @@ import { FlatList, SafeAreaView, StatusBar,ScrollView, StyleSheet, Text, Touchab
 //import AppText from '../components/AppText';
 import Screen from '../components/Screen';
 import AppButton from '../components/AppButton';
-import StoreContext from './GlobalState'
-import Questionaire from '../components/Questionaire';
+import StoreContext from '../screens/GlobalState'
 import GuazBackContainer from '../components/GuazBackContainer';
 //import Card from '../components/Card';
-import {riskQuestions} from './supportingfiles/dummydata';
-import RiskAssessmentResult from '../components/RiskAssessmentResult';
+import {riskQuestions} from '../screens/supportingfiles/dummydata';
 // import Header from "../components/Header";
 
 
@@ -35,10 +33,10 @@ const questionData =riskQuestions;
     </TouchableOpacity>
   );
 
-function RiskQuestionaire({navigation},props) {
+function Questionaire({navigation,setShowResult},props) {
   const contextData = useContext(StoreContext);
+  console.log("Total riskQuestions",questionData.length)
 
-  const [showResult, setShowResult] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
     const [selectedId, setSelectedId] = useState(null);
     const [questionId, setquestionId] = useState(0);
@@ -71,19 +69,24 @@ setRiskProfile(tempRisk);
  setquestionId(questionId+1);
       }else{
         alert("no moreQuest");
-        calculateRiskScore(riskProfile);
-       // console.log("RisdResponse",riskProfile);
-     //   navigation.navigate('CreateNewPotScreen');
+       let score= calculateRiskScore(riskProfile);
+       console.log("RiskScore final",score);
+       contextData.setRiskScore(score)
+     setShowResult(true);
       }
     
   }
-  async function calculateRiskScore(profile){
+ function calculateRiskScore(profile){
+    console.log("RisProfile",profile);
     let score=0;
-    profile.forEach(element => {
-      score+=parseFloat(element.option.QuizValue)*parseFloat(element.weightage)/100;
-      
-    });
-console.log("RiskScore",score);
+    for(var i=0;i<profile.length;i++){
+   let element=profile[i];
+      score= score+(parseFloat(element.option.QuizValue)*parseFloat(element.weightage)/100);
+      console.log("RiskScore",score);
+    }
+  
+
+return Math.floor(score);
   } 
   const renderItem = ({ item,index }) => {
     const backgroundColor = index === selectedId ?  "#104B7D":"#5E88A2";
@@ -102,11 +105,8 @@ console.log("RiskScore",score);
   };
 
     return (
-      <Screen>
-     
-        
-        <GuazBackContainer/>
-        {/* <View style={styles.container}>
+      
+        <View style={styles.container}>
           <Text style={styles.text}>{questionData[questionId].Description}</Text>
            <ScrollView style={styles.container}>
       <FlatList
@@ -118,7 +118,7 @@ console.log("RiskScore",score);
     </ScrollView>
 
 
-    </View>
+  
 
     <View style={styles.Button}>
         <AppButton 
@@ -126,11 +126,8 @@ console.log("RiskScore",score);
           onPress={handleNext }
         
         />
-        </View> */}
-         {(showResult)?
-            <RiskAssessmentResult/> :<Questionaire setShowResult={setShowResult}/>
-         }
-        </Screen>
+        </View>
+        </View>
     );
 }
 
@@ -160,4 +157,4 @@ const styles = StyleSheet.create({
     },
   });
 
-export default RiskQuestionaire;
+export default Questionaire;
