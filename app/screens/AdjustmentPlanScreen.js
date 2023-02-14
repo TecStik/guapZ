@@ -7,6 +7,7 @@ import Screen from '../components/Screen';
 import AppText from '../components/AppText';
 import SliderComponent from '../components/SliderComponent';
 import AppButton from '../components/AppButton';
+import GuazBackContainer from '../components/GuazBackContainer';
 
 function AdjustmentPlanScreen(props) {
 
@@ -31,8 +32,9 @@ function AdjustmentPlanScreen(props) {
 
     return (
         <Screen>
-            <BackContainer/>
-            <Banner/>
+            {/* <BackContainer/>
+            <Banner/> */}
+            <GuazBackContainer/>
             <ScrollView>
                 <View style={styles.header}>
                     <AppText style={styles.heading}>
@@ -43,8 +45,9 @@ function AdjustmentPlanScreen(props) {
 
                 <AppText>Change Periodic Contribution</AppText>
                 <SliderComponent
-                    high={20}
+                    high={100}
                     low={0}
+                    title={'Ruppes'}
                     onPress={handleSlider1}
                     value={sliderData1}
                 />
@@ -53,6 +56,7 @@ function AdjustmentPlanScreen(props) {
                 <SliderComponent
                     high={20}
                     low={0}
+                    title={'Month'}
                     onPress={handleSlider2}
                     value={sliderData2}
                 />
@@ -61,15 +65,16 @@ function AdjustmentPlanScreen(props) {
                 <SliderComponent
                     high={20}
                     low={0}
+                    title={'Rupees'}
                     onPress={handleSlider3}
                     value={sliderData3}
                 />
 
-                <AppButton
-                    title={'Confirm'}
-                    onPress={handlePress}
-                />
             </ScrollView>
+            <AppButton
+                title={'Confirm'}
+                onPress={handlePress}
+            />
 
         </Screen>
     );
