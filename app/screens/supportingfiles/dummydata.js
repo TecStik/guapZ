@@ -120,7 +120,41 @@ contribution:"what will be your periodic contribution"
     "__v": 0
     }
     ]
-     export const Weightages=[
+     export const funds=[
+        {
+            "name":"GuapzLowRisk",
+            "description":"Islamic low risk fund",
+            "return":"12",
+            "riskScore":"4",
+            "icon":""
+        }
+,
+{
+            "name":"GuapzLowRisk1",
+            "description":"Islamic low risk fund",
+            "return":"127",
+            "riskScore":"4",
+            "icon":""
+
+        },
+        {
+            "name":"GuapzLowRisk2",
+            "description":"Islamic low risk fund",
+            "return":"125",
+            "riskScore":"4",
+            "icon":""
+
+        }
+        ,
+        {
+            "name":"GuapzLowRisk2",
+            "description":"Islamic low risk fund",
+            "return":"125",
+            "riskScore":"4",
+            "icon":""
+
+        }   
+        
 
      ]
    
