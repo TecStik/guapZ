@@ -17,6 +17,7 @@ import AboutYourSelfScreen from "../screens/AboutYourSelfScreen";// E Wallet pla
 import FundYourAccountScreen from "../screens/FundYourAccountScreen";// funding the account
 import InvestmentPlanSummaryScreen from "../screens/InvestmentPlanSummaryScreen";// Plan Summary
 import PortFolioPositionScreen from "../screens/PortFolioPositionScreen";// Portfolio Position
+import LoginScreen from "../screens/LoginScreen";
 //import aa  from "../screens/";// Portfolio Position
 
 
@@ -27,6 +28,7 @@ const Stack = createNativeStackNavigator();
 
 const AuthNavigator=()=> (
     <Stack.Navigator>
+        <Stack.Screen name='Login' component={LoginScreen} options={{headerShown: false}} />
         <Stack.Screen name='Adjust Portfolio' component={AdjustmentPlanScreen} options={{headerShown: false}} />
         <Stack.Screen name='PortFolioPositionScreen' component={PortFolioPositionScreen} options={{headerShown: false}} />
         <Stack.Screen name='Investment Plan SummaryScreen' component={InvestmentPlanSummaryScreen} options={{headerShown: false}} />
