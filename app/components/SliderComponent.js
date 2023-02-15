@@ -10,16 +10,19 @@ import Slider from '@react-native-community/slider';
 const {height, width}= Dimensions.get('window');
 
 
-function SliderComponent({ high, low, thumbSize = 2,onPress, value }) {
+function SliderComponent({ high, low, thumbSize = 2, onPress, value, title }) {
     const [data, setSliderData] = useState(10);
     return (
         <View style={styles.container}>
-
-            <View style={styles.display}>
-                <Text style={styles.valueText}>
-                    {value}
-                </Text>
-            </View>
+            <View style={{ width: '20%', height: '90%', alignItems: 'center', marginTop: 5}}>
+                <View style={styles.display}>
+                    <Text style={styles.valueText}>
+                        {value}
+                    </Text>
+                </View>
+                {title && <Text>{title}</Text>}
+            </View>    
+                
 
 
             <View style={styles.slider}>
@@ -47,10 +50,11 @@ const styles = StyleSheet.create({
         alignItems:'center',
         justifyContent: 'center',
         flexDirection: 'row',
+        marginVertical: 10,
     },
     display:{
-        width: '20%',
-        height: '70%',
+        width: '100%',
+        height: '75%',
         backgroundColor: 'white',
         justifyContent: 'center',
         alignItems: 'center',
@@ -63,7 +67,7 @@ const styles = StyleSheet.create({
     },
     slider:{
         width: '70%',
-        height: '90%',
+        height: '100%',
         justifyContent: 'center',
         alignItems:'center',
         // backgroundColor: 'yellow',
