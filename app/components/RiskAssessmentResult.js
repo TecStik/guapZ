@@ -53,12 +53,15 @@ function RiskAssessmentResult(props) {
                     </TouchableOpacity>
                 </View>
             </View>
-            <AppText>Out of 10, can adjust upto two nothches</AppText>
-
-            <AppButton
-                title={'Proceed'}
-                onPress={handleProceed}
-            />
+            <View style={{height: 50}}>
+                <AppText>Out of 10, can adjust upto two nothches</AppText>
+            </View>
+            <View style={{width: '80%',}}>
+                <AppButton
+                    title={'Proceed'}
+                    onPress={handleProceed}
+                />
+            </View>
         </View>
   );
 }
