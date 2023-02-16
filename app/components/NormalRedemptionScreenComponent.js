@@ -4,10 +4,7 @@ import { View, StyleSheet, ScrollView, TextInput } from 'react-native';
 import AppText from '../components/AppText';
 
 
-import GuazBackContainer from '../components/GuazBackContainer';
-import NormalRedemptionScreenComponent from '../components/NormalRedemptionScreenComponent';
 import PickerList from '../components/PickerList';
-import Screen from '../components/Screen';
 import TickBox from '../components/TickBox';
 
 
@@ -22,16 +19,13 @@ const values = [
     {key:'7', value:'Drinks'},
 ]
 
-
-function NormalRedemptionScreen(props) {
+function NormalRedemptionScreenComponent(props) {
     return (
-        <Screen>
-            <GuazBackContainer/>
-            {/* <View style={{height: 50,}}>
+        <>
+            <View style={{height: 50,}}>
                 <AppText style={styles.header}>
                     Normal Redemption
                 </AppText>
-
             </View>
             <ScrollView>
                 <View style={{}}>
@@ -134,11 +128,8 @@ function NormalRedemptionScreen(props) {
                 </View>    
 
 
-            </ScrollView> */}
-
-            <NormalRedemptionScreenComponent/>
-
-        </Screen>
+            </ScrollView>
+        </>
     );
 }
 
@@ -172,4 +163,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default NormalRedemptionScreen;
+export default NormalRedemptionScreenComponent;

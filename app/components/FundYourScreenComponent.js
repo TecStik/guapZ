@@ -2,13 +2,11 @@ import React from 'react';
 
 import * as Yup from 'yup';
 
-import { View, StyleSheet, ScrollView } from 'react-native';
+import { StyleSheet, ScrollView } from 'react-native';
 
 import AppText from '../components/AppText';
-import Screen from '../components/Screen';
-import { AppForm, AppFormField, AppFormPassword, SubmitButton } from '../forms';
-import GuazBackContainer from '../components/GuazBackContainer';
-import FundYourScreenComponent from '../components/FundYourScreenComponent';
+import { AppForm, AppFormField, SubmitButton } from '../forms';
+
 
 const validationSchema = Yup.object().shape({
     creditCardNumber: Yup.string().required().label("Credit Card Number"),
@@ -17,20 +15,15 @@ const validationSchema = Yup.object().shape({
     country: Yup.string().required().label("Country"),
 });
 
-
-function FundYourAccountScreen(props) {
-
+function FundYourScreenComponent(props) {
 
     const Next=(values)=>{
         console.log(values);
-    }   
-  return (
-    <Screen>
-        <GuazBackContainer/>
+    }
 
-        <FundYourScreenComponent/>
-        {/* <ScrollView>
-        <AppText style={styles.header}>Fund your Account</AppText>
+    return (
+        <ScrollView>
+            <AppText style={styles.header}>Fund your Account</AppText>
             <AppForm
                 initialValues={{ creditCardNumber: '', nationality:'',  address: '',  country: '' }}
                 onSubmit={values => Next(values)}
@@ -75,9 +68,8 @@ function FundYourAccountScreen(props) {
                     title='Next'
                 />
             </AppForm>
-        </ScrollView> */}
-    </Screen>
-  );
+        </ScrollView>
+    );
 }
 
 const styles = StyleSheet.create({
@@ -86,7 +78,8 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 25,
         fontWeight: '900',
+        marginBottom: 50,
     },
 });
 
-export default FundYourAccountScreen;
+export default FundYourScreenComponent;

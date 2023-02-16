@@ -4,6 +4,7 @@ import { View, StyleSheet, Dimensions, TextInput, ScrollView } from 'react-nativ
 import AppButton from '../components/AppButton';
 
 import AppText from '../components/AppText';
+import E_WalletScreenComponent from '../components/E_WalletScreenComponent';
 import GuazBackContainer from '../components/GuazBackContainer';
 import Screen from '../components/Screen';
 
@@ -23,7 +24,7 @@ function E_WalletScreen(props) {
     return (
         <Screen>
             <GuazBackContainer/>
-            <ScrollView>
+            {/* <ScrollView>
                     <View style={styles.display}>
                         <AppText style={styles.header}>
                             E Wallet
@@ -47,7 +48,10 @@ function E_WalletScreen(props) {
                         onPress={handleTopUp}
                     />
 
-            </ScrollView>
+            </ScrollView> */}
+
+            <E_WalletScreenComponent/>
+
         </Screen>
     );
 }

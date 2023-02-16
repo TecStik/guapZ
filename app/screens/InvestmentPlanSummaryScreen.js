@@ -6,6 +6,7 @@ import Banner from '../components/Banner';
 import Screen from '../components/Screen';
 import AppText from '../components/AppText';
 import AppButton from '../components/AppButton';
+import InvestmentPlanSummaryScreenComponent from '../components/InvestmentPlanSummaryScreenComponent';
 
 function InvestmentPlanSummaryScreen(props) {
 
@@ -19,7 +20,7 @@ function InvestmentPlanSummaryScreen(props) {
             <Banner/>
 
 
-            <ScrollView>
+            {/* <ScrollView>
 
             <View style={styles.container}>
             <View style={styles.header}>
@@ -82,7 +83,9 @@ function InvestmentPlanSummaryScreen(props) {
                 onPress={handleAdjust}
             />
         </View>
-            </ScrollView>
+            </ScrollView> */}
+
+            <InvestmentPlanSummaryScreenComponent/>
         </Screen>
     );
 }

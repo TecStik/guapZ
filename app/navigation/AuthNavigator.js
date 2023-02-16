@@ -28,18 +28,22 @@ const Stack = createNativeStackNavigator();
 
 const AuthNavigator=()=> (
     <Stack.Navigator>
+        
         <Stack.Screen name='Login' component={LoginScreen} options={{headerShown: false}} />
         <Stack.Screen name='Adjust Portfolio' component={AdjustmentPlanScreen} options={{headerShown: false}} />
         <Stack.Screen name='PortFolioPositionScreen' component={PortFolioPositionScreen} options={{headerShown: false}} />
         <Stack.Screen name='Investment Plan SummaryScreen' component={InvestmentPlanSummaryScreen} options={{headerShown: false}} />
         <Stack.Screen name='E Wallet' component={E_WalletScreen} options={{headerShown: false}} />
-        <Stack.Screen name='FundYourAccountScreen' component={FundYourAccountScreen} options={{headerShown: false}} />
-        <Stack.Screen name='About yoursef' component={AboutYourSelfScreen} options={{headerShown: false}} />
-        <Stack.Screen name='Risk Questionaire' component={RiskQuestionaire} options={{headerShown: false}} />
+        <Stack.Screen name='FundYourAccountScreen' component={FundYourAccountScreen} options={{headerShown: false}} />        
+        <Stack.Screen name='About yoursef' component={AboutYourSelfScreen} options={{headerShown: false}} />        
+        <Stack.Screen name='Risk Questionaire' component={RiskQuestionaire} options={{headerShown: false}} /> 
+        {/* 'Risk Questionaire' mai pata nahi kuch alag hi kaam hoa hai, mera kaam nahi hai. yeh cheez sahi nahi hai. 2 baar 'return' likha hoa hai. masla aaiga */}
         <Stack.Screen name='Redemption' component={NormalRedemptionScreen} options={{headerShown: false}} />
         <Stack.Screen name='Option Screen' component={OptionScreen} options={{headerShown: false}} />
-         <Stack.Screen name='select Goal' component={MultipleChoiceScreen} options={{headerShown: false}}/>
+        <Stack.Screen name='select Goal' component={MultipleChoiceScreen} options={{headerShown: false}}/>
+
         <Stack.Screen name='select Theme' component={MultipleOptionScreen} options={{headerShown: false}}/>
+        
         <Stack.Screen name='RegisterScreen' component={RegisterScreen} options={{headerShown: false}}/>
         <Stack.Screen name='Set Goals' component={RegisterScreen} options={{headerShown: false}}/>
     </Stack.Navigator>

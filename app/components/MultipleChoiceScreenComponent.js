@@ -1,11 +1,8 @@
 import React from 'react';
 
-import { View, StyleSheet, FlatList } from 'react-native';
-import BackContainer from '../components/BackContainer';
-import Banner from '../components/Banner';
+import {StyleSheet, FlatList } from 'react-native';
 import SmallImageAppButton from '../components/SmallImageAppButton';
-import Screen from '../components/Screen';
-import MultipleChoiceScreenComponent from '../components/MultipleChoiceScreenComponent';
+
 
 
 const listings = [
@@ -41,43 +38,34 @@ const listings = [
     },
   ];
 
+function MultipleChoiceScreenComponent(props) {
+    
+    const handlePress=(item)=>{
+        console.log(item)
+      }
 
-
-function MultipleChoiceScreen(props) {
-  // console.log("propsin Mutiple coice",props)
-
-  const handlePress=(item)=>{
-    console.log(item)
-  }
-
-  return (
-    <Screen>
-        <BackContainer navigation={props.navigation} title={" None"}/>
-        <Banner/>
-        {/* <FlatList 
+    return (
+        <FlatList 
             data={listings}
             keyExtractor={listing => listing.id.toString()}
             numColumns={2}
             columnWrapperStyle={styles.column}
             renderItem={({item}) =>
                 <SmallImageAppButton 
-                  title={item.title}
-                  image={item.image} 
-                  onPress={()=>handlePress(item)}
+                    title={item.title}
+                    onPress={()=>handlePress(item)}
+                    image={item.image} 
                 /> 
             } 
-        /> */}
-
-        <MultipleChoiceScreenComponent/>
-    </Screen>
-  );
+        />
+    );
 }
 
 const styles = StyleSheet.create({
-  container:{},
-  column:{
-    justifyContent: 'space-evenly',
-  },
+    container:{},
+    column:{
+        justifyContent: 'space-evenly',
+    },
 });
 
-export default MultipleChoiceScreen;
+export default MultipleChoiceScreenComponent;
