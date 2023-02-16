@@ -4,6 +4,7 @@ import { View, StyleSheet, Dimensions } from 'react-native';
 import AppButton from '../components/AppButton';
 import AppText from '../components/AppText';
 import GuazBackContainer from '../components/GuazBackContainer';
+import PortfolioPositionScreenComponent from '../components/PortfolioPositionScreenComponent';
 import Screen from '../components/Screen';
 
 const {height, width} = Dimensions.get('window');
@@ -18,7 +19,7 @@ function PortFolioPositionScreen(props) {
     return (
         <Screen>
             <GuazBackContainer/>
-            <View style={styles.container}>
+            {/* <View style={styles.container}>
                 <AppText style={styles.header}>
                     Portfolio Position
                 </AppText>
@@ -64,15 +65,18 @@ function PortFolioPositionScreen(props) {
                     </View>
 
                 </View>
+                
+                <View style={{height: '20%', width: '100%'}}>
+                    <AppButton
+                        title={'View Statement'}
+                        onPress={handleViewStatement}
+                    />
 
+                </View>
 
-            </View>
+            </View> */}
 
-            <AppButton
-                title={'View Statement'}
-                onPress={handleViewStatement}
-            />
-
+            <PortfolioPositionScreenComponent/>
 
 
             
@@ -84,21 +88,21 @@ function PortFolioPositionScreen(props) {
 const styles = StyleSheet.create({
     container:{
         width: width,
-        height: height*0.3,
+        height: height*0.5,
         alignItems: 'center',
-        marginVertical: height*0.1,
-        // backgroundColor: 'red',
     },
     header: {
         textAlign: 'center',
         fontSize: 25,
         fontWeight: '900',
+        padding: 10,
     },
     table:{
         width: '100%',
-        height: '80%',
+        height: '45%',
         // backgroundColor: 'blue',
         borderWidth: 3,
+        marginBottom: 20,
     },
     tableRow:{
         width: '100%',

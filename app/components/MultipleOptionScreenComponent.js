@@ -1,23 +1,17 @@
 import React from 'react';
 
 import { View, StyleSheet } from 'react-native';
-import BackContainer from '../components/BackContainer';
-import Banner from '../components/Banner';
 import ImageAppButton from '../components/ImageAppButton';
-import MultipleOptionScreenComponent from '../components/MultipleOptionScreenComponent';
-import Screen from '../components/Screen';
 
-function MultipleOptionScreen(props) {
+
+function MultipleOptionScreenComponent(props) {
 
     const handleSavings=()=>{
         console.log('handleSavings')
     }
 
-  return (
-    <Screen>
-        <BackContainer/>
-        <Banner/>
-        {/* <View style={styles.container}>
+    return (
+        <View style={styles.container}>
             <View style={styles.topContainer}>
                 <ImageAppButton
                     title={'Savings'}
@@ -42,33 +36,29 @@ function MultipleOptionScreen(props) {
                     onPress={handleSavings}
                 />
             </View> 
-        </View> */}
-
-        <MultipleOptionScreenComponent/>
-
-    </Screen>
-  );
+        </View>
+    );
 }
 
 const styles = StyleSheet.create({
-  container:{
-    flex: 0.8,
-    // backgroundColor: 'green'
-  },
-  topContainer:{
-    flex: 0.5,
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    alignItems:'center',
-    // backgroundColor: 'pink',
-  },
-  bottomContainer:{
-    flex: 0.5,
-    flexDirection:'row',
-    justifyContent: 'space-evenly',
-    alignItems:'center',
-    // backgroundColor: 'yellow',
-  },
+    container:{
+        flex: 0.8,
+        // backgroundColor: 'green'
+    },
+    topContainer:{
+        flex: 0.5,
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        alignItems:'center',
+        // backgroundColor: 'pink',
+    },
+    bottomContainer:{
+        flex: 0.5,
+        flexDirection:'row',
+        justifyContent: 'space-evenly',
+        alignItems:'center',
+        // backgroundColor: 'yellow',
+    },
 });
 
-export default MultipleOptionScreen;
+export default MultipleOptionScreenComponent;

@@ -1,16 +1,10 @@
 import React from 'react';
-
 import * as Yup from 'yup';
 
-import { View, StyleSheet, ScrollView } from 'react-native';
+import { StyleSheet, ScrollView } from 'react-native';
 
 import AppText from '../components/AppText';
-import Screen from '../components/Screen';
 import { AppForm, AppFormField, AppFormPassword, SubmitButton } from '../forms';
-import Banner from '../components/Banner';
-import BackContainer from '../components/BackContainer';
-import GuazBackContainer from '../components/GuazBackContainer';
-import AboutYourSelfScreenComponent from '../components/AboutYourSelfScreenComponent';
 
 const validationSchema = Yup.object().shape({
     passportNumber: Yup.string().required().label("Passport Number"),
@@ -21,19 +15,15 @@ const validationSchema = Yup.object().shape({
     retypePassword: Yup.string().required().min(4).label("Retype Password"),
 });
 
-
-function AboutYourSelfScreen(props) {
-
+function AboutYourSelfScreenComponent(props) {
 
     const Next=(values)=>{
         console.log(values);
-    }   
-  return (
-    <Screen>
-        <GuazBackContainer/>
-        <AboutYourSelfScreenComponent/>
-        {/* <ScrollView>
-        <AppText style={styles.header}>Tell us more about yourself</AppText>
+    }
+
+    return (
+        <ScrollView>
+            <AppText style={styles.header}>Tell us more about yourself</AppText>
             <AppForm
                 initialValues={{ passportNumber: '', nationality:'',  address: '',  country: '', password: '', retypePassword: '' }}
                 onSubmit={values => Next(values)}
@@ -96,9 +86,8 @@ function AboutYourSelfScreen(props) {
                     title='Next'
                 />
             </AppForm>
-        </ScrollView> */}
-    </Screen>
-  );
+        </ScrollView>       
+    );
 }
 
 const styles = StyleSheet.create({
@@ -110,4 +99,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default AboutYourSelfScreen;
+export default AboutYourSelfScreenComponent;

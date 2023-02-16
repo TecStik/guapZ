@@ -3,9 +3,12 @@ import React from 'react';
 import { View, StyleSheet, ScrollView } from 'react-native';
 import BackContainer from '../components/BackContainer';
 import Banner from '../components/Banner';
+import GuazBackContainer from '../components/GuazBackContainer';
 import Screen from '../components/Screen';
 import AppText from '../components/AppText';
 import AppButton from '../components/AppButton';
+import FundComponent from '../components/FundComponent';
+import InvestmentPlanSummaryScreenComponent from '../components/InvestmentPlanSummaryScreenComponent';
 
 function InvestmentPlanSummaryScreen(props) {
 
@@ -15,74 +18,14 @@ function InvestmentPlanSummaryScreen(props) {
 
     return (
         <Screen>
-            <BackContainer/>
-            <Banner/>
+            {/* <BackContainer/> */}
+            {/* <Banner/> */}
+            <GuazBackContainer/>
 
 
-            <ScrollView>
+           {/* <FundComponent/> */}
 
-            <View style={styles.container}>
-            <View style={styles.header}>
-                <AppText style={styles.heading}>
-                    Risk Assessment Result
-                </AppText>
-            </View>
-
-            <View style={styles.table}>
-                <View style={[styles.row, {backgroundColor: '#CFD9E8'}]}>
-                    <View style={styles.leftColumn}>
-                        <AppText style={{fontWeight: 'bold', textAlignVertical: 'center',}}>
-                            Target Amount
-                        </AppText>
-                    </View>
-                    <View style={styles.rightColumn}>
-                        <AppText style={{textAlignVertical: 'center'}}>
-                            USD
-                        </AppText>
-                    </View>    
-                </View>
-                <View style={[styles.row, {backgroundColor: 'white'}]}>
-                    <View style={styles.leftColumn }>
-                        <AppText style={{fontWeight: 'bold', textAlignVertical: 'center',}}>
-                            Time Period
-                        </AppText>
-                    </View>
-                    <View style={styles.rightColumn}>
-                        <AppText style={{textAlignVertical: 'center'}}>
-                            XX Months
-                        </AppText>
-                    </View>    
-                </View>
-                <View style={[styles.row, {backgroundColor: '#CFD9E8'}]}>
-                    <View style={styles.leftColumn}>
-                        <AppText style={{fontWeight: 'bold', textAlignVertical: 'center',}}>
-                            Monthly Payment
-                        </AppText>
-                    </View>
-                    <View style={styles.rightColumn}>
-                        <AppText style={{textAlignVertical: 'center'}}>
-                            XXX USD/Month
-                        </AppText>
-                    </View>    
-                </View>
-            </View>
-
-            <View style={styles.detail}>
-                <AppText>
-                    You preferred monthly contribution of USD is insufficient to achieve your target goal, {"\n"}
-                    You should either {"\n"}
-                    {"\u2160"}.    Increase your Monthly Contribution{"\n"}
-                    {"\u2161"}.   Defer your plan{"\n"}
-                    {"\u2162"}.  Opt for a lesser targeted amount{"\n"}
-                </AppText>
-
-            </View>
-            <AppButton
-                title={'Adjust'}
-                onPress={handleAdjust}
-            />
-        </View>
-            </ScrollView>
+            <InvestmentPlanSummaryScreenComponent/>
         </Screen>
     );
 }

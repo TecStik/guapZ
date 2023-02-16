@@ -1,16 +1,11 @@
 import React, {useState} from 'react';
 
 import { View, StyleSheet, ScrollView } from 'react-native';
-import BackContainer from '../components/BackContainer';
-import Banner from '../components/Banner';
-import Screen from '../components/Screen';
 import AppText from '../components/AppText';
 import SliderComponent from '../components/SliderComponent';
 import AppButton from '../components/AppButton';
-import GuazBackContainer from '../components/GuazBackContainer';
-import AdjustmentPlanScreenComponent from '../components/AdjustmentPlanScreenComponent';
 
-function AdjustmentPlanScreen(props) {
+function AdjustmentPlanScreenComponent(props) {
 
     const [sliderData1, setSliderData1] = useState();
     const [sliderData2, setSliderData2] = useState();
@@ -30,13 +25,9 @@ function AdjustmentPlanScreen(props) {
         console.log( sliderData1, " ", sliderData2, " ", sliderData3)
     }
 
-
     return (
-        <Screen>
-            {/* <BackContainer/>
-            <Banner/> */}
-            <GuazBackContainer/>
-            {/* <ScrollView>
+        
+            <ScrollView>
                 <View style={styles.header}>
                     <AppText style={styles.heading}>
                         Adjust your Plan
@@ -70,15 +61,14 @@ function AdjustmentPlanScreen(props) {
                     onPress={handleSlider3}
                     value={sliderData3}
                 />
-
+            <View style={{marginVertical: 20,}}>
+                <AppButton
+                    title={'Confirm'}
+                    onPress={handlePress}
+                />
+            </View>
             </ScrollView>
-            <AppButton
-                title={'Confirm'}
-                onPress={handlePress}
-            /> */}
-            <AdjustmentPlanScreenComponent/>
-
-        </Screen>
+    
     );
 }
 
@@ -98,4 +88,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default AdjustmentPlanScreen;
+export default AdjustmentPlanScreenComponent;
