@@ -16,7 +16,7 @@ function InvestmentPlanSummaryScreenComponent(props) {
             <View style={styles.container}>
                 <View style={styles.header}>
                     <AppText style={styles.heading}>
-                        Risk Assessment Result
+                        Investment Plan Summary
                     </AppText>
                 </View>
 

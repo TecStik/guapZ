@@ -28,10 +28,10 @@ const Stack = createNativeStackNavigator();
 
 const AuthNavigator=()=> (
     <Stack.Navigator>
+                         <Stack.Screen name='Investment Plan SummaryScreen' component={InvestmentPlanSummaryScreen} options={{headerShown: false}} />
                  <Stack.Screen name='Adjust Portfolio' component={AdjustmentPlanScreen} options={{headerShown: false}} />
                          <Stack.Screen name='PortFolioPositionScreen' component={PortFolioPositionScreen} options={{headerShown: false}} />
 
-                         <Stack.Screen name='Investment Plan SummaryScreen' component={InvestmentPlanSummaryScreen} options={{headerShown: false}} />
 
                  <Stack.Screen name='E Wallet' component={E_WalletScreen} options={{headerShown: false}} />
                                  <Stack.Screen name='FundYourAccountScreen' component={FundYourAccountScreen} options={{headerShown: false}} />
