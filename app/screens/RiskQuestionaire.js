@@ -36,6 +36,7 @@ const questionData =riskQuestions;
   );
 
 function RiskQuestionaire({navigation},props) {
+  console.log("Nav in Risk Questionaire",navigation)
   const contextData = useContext(StoreContext);
 
   const [showResult, setShowResult] = useState(true);
@@ -108,7 +109,7 @@ console.log("RiskScore",score);
         <GuazBackContainer/>
 
          {(showResult)?
-            <RiskAssessmentResult/> :<Questionaire setShowResult={setShowResult}/>
+            <RiskAssessmentResult navigation={navigation}/> :<Questionaire setShowResult={setShowResult}/>
          }
         </Screen>
     );

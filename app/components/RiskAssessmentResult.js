@@ -8,13 +8,14 @@ import AppText from './AppText';
 import Counter from './Counter';
 import AppButton from './AppButton';
 
-function RiskAssessmentResult(props) {
+function RiskAssessmentResult({navigation},props)  {
     const contextData = useContext(StoreContext);
    
     const [count, setCount] = useState(contextData.riskScore);
 
     const handleProceed=()=>{
-        console.log(count)
+       // console.log(count,navigation,props);
+        navigation.navigate("Investment Plan SummaryScreen")
     }
 
     const handleUp=()=>{
