@@ -27,6 +27,7 @@ const Stack = createNativeStackNavigator();
 
 const AuthNavigator=()=> (
     <Stack.Navigator>
+         <Stack.Screen name='Risk Questionaire' component={RiskQuestionaire} options={{headerShown: false}} />
                          <Stack.Screen name='Investment Plan SummaryScreen' component={InvestmentPlanSummaryScreen} options={{headerShown: false}} />
                  <Stack.Screen name='Adjust Portfolio' component={AdjustmentPlanScreen} options={{headerShown: false}} />
                          <Stack.Screen name='PortFolioPositionScreen' component={PortFolioPositionScreen} options={{headerShown: false}} />
@@ -38,7 +39,6 @@ const AuthNavigator=()=> (
                          <Stack.Screen name='About yoursef' component={AboutYourSelfScreen} options={{headerShown: false}} />
 
 
-         <Stack.Screen name='Risk Questionaire' component={RiskQuestionaire} options={{headerShown: false}} />
 
                  <Stack.Screen name='Redemption' component={NormalRedemptionScreen} options={{headerShown: false}} />
 

@@ -1,16 +1,21 @@
-import React from 'react';
+import React, { useState,useContext } from "react";
 
 import { View, StyleSheet, ScrollView } from 'react-native';
+import StoreContext from './GlobalState'
 import BackContainer from '../components/BackContainer';
 import Banner from '../components/Banner';
 import GuazBackContainer from '../components/GuazBackContainer';
 import Screen from '../components/Screen';
 import AppText from '../components/AppText';
 import AppButton from '../components/AppButton';
+import { funds }  from './supportingfiles/dummydata';
 import FundComponent from '../components/FundComponent';
 import InvestmentPlanSummaryScreenComponent from '../components/InvestmentPlanSummaryScreenComponent';
+import AdjustmentPlanScreenComponent from '../components/AdjustmentPlanScreenComponent';
 
 function InvestmentPlanSummaryScreen(props) {
+    const contextData = useContext(StoreContext);
+    console.log("Funds in Investment Plan Summary",contextData,funds);
 
     const handleAdjust=()=>{
         console.log("pressed Adjust")
@@ -23,9 +28,9 @@ function InvestmentPlanSummaryScreen(props) {
             <GuazBackContainer/>
 
 
-           {/* <FundComponent/> */}
+           <FundComponent/>
 
-            <InvestmentPlanSummaryScreenComponent/>
+            {/* <InvestmentPlanSummaryScreenComponent/> */}
         </Screen>
     );
 }
