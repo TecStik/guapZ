@@ -38,7 +38,7 @@ const questionData =riskQuestions;
 function RiskQuestionaire({navigation},props) {
   const contextData = useContext(StoreContext);
 
-  const [showResult, setShowResult] = useState(false);
+  const [showResult, setShowResult] = useState(true);
   const [selectedOption, setSelectedOption] = useState(null);
     const [selectedId, setSelectedId] = useState(null);
     const [questionId, setquestionId] = useState(0);
@@ -86,7 +86,7 @@ setRiskProfile(tempRisk);
 console.log("RiskScore",score);
   } 
   const renderItem = ({ item,index }) => {
-    const backgroundColor = index === selectedId ?  "#104B7D":"#ff0000";
+    const backgroundColor = index === selectedId ?  "#104B7D":"#5E88A2";
     const color = index === selectedId ? 'white' : 'black';
 
 
@@ -106,27 +106,7 @@ console.log("RiskScore",score);
      
         
         <GuazBackContainer/>
-        {/* <View style={styles.container}>
-          <Text style={styles.text}>{questionData[questionId].Description}</Text>
-           <ScrollView style={styles.container}>
-      <FlatList
-        data={questionData[questionId].Options}
-        renderItem={renderItem}
-        keyExtractor={(item, index) => index}
-        extraData={selectedId}
-      />
-    </ScrollView>
 
-
-    </View>
-
-    <View style={styles.Button}>
-        <AppButton 
-          title='Continue'
-          onPress={handleNext }
-        
-        />
-        </View> */}
          {(showResult)?
             <RiskAssessmentResult/> :<Questionaire setShowResult={setShowResult}/>
          }
@@ -149,6 +129,7 @@ const styles = StyleSheet.create({
       padding: 20,
       marginVertical: 8,
       marginHorizontal: 16,
+      backgroundColor: 'red'
     },
     title: {
       fontSize: 22,
