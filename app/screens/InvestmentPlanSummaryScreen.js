@@ -15,7 +15,7 @@ import AdjustmentPlanScreenComponent from '../components/AdjustmentPlanScreenCom
 
 function InvestmentPlanSummaryScreen(props) {
     const contextData = useContext(StoreContext);
-    console.log("Funds in Investment Plan Summary",contextData,funds);
+    console.log("Funds in Investment Plan Summary",contextData.riskScore);
 
     const handleAdjust=()=>{
         console.log("pressed Adjust")

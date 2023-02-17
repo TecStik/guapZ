@@ -20,12 +20,15 @@ function RiskAssessmentResult({navigation},props)  {
 
     const handleUp=()=>{
         if (count <10){
+          //  contextData.setRiskScore(count+1);
             setCount(count+1);
+            contextData.setRiskScore(count+1);
         }
     }
     const handleDown=()=>{
         if (count >0){
             setCount(count-1);
+            contextData.setRiskScore(count-1);
         }
     }
 

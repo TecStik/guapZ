@@ -36,10 +36,10 @@ const questionData =riskQuestions;
   );
 
 function RiskQuestionaire({navigation},props) {
-  console.log("Nav in Risk Questionaire",navigation)
+
   const contextData = useContext(StoreContext);
 
-  const [showResult, setShowResult] = useState(true);
+  const [showResult, setShowResult] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
     const [selectedId, setSelectedId] = useState(null);
     const [questionId, setquestionId] = useState(0);
