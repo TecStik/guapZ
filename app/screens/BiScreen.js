@@ -32,9 +32,9 @@ function BiScreen(props) {
           {(contextData.step=="2")?
             <Frequency/> :<></>
           }
-          {(contextData.step=="3")?
+          {/* {(contextData.step=="3")?
             <RiskAssessmentResult/> :<></>
-          }
+          } */}
             {/* <TargetAmount/> */}
             {/* <Frequency/> */}
             {/* <RiskAssessmentResult/> */}

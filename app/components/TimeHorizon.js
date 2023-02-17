@@ -12,6 +12,7 @@ function TimeHorizon(props) {
     const [value, setValue] =useState('');
 
     const handleProceed=()=>{
+      contextData.setTHorizon(parseInt(value))
         console.log(value);
         const nextstep=parseInt(contextData.step)+1
         contextData.setStep(nextstep);

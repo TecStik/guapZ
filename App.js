@@ -31,13 +31,17 @@ import NormalRedemptionScreen from './app/screens/NormalRedemptionScreen';
 import TickBox from './app/components/TickBox';
 import NormalRedemptionScreen2 from './app/screens/NormalRedemptionScreen2';
 import FundComponent from './app/components/FundComponent';
-import AboutYourSelfScreenComponent from './app/components/AboutYourSelfScreenComponent';
-import AdjustmentPlanScreenComponent from './app/components/AdjustmentPlanScreenComponent';
 
 export default function App() {
   const [goals,setGoals]= useState(["testing"]);
-  const [step,setStep]= useState(3);
+  const [step,setStep]= useState(0);
   const [riskScore,setRiskScore]= useState(0);
+  const [futValue,setFutValue]= useState(0);
+  const [tHorizon,setTHorizon]= useState(0);
+  const [frequency,setFrequency]= useState(0);
+  const [pmt,setPmt]= useState(0);
+  const [InitCont,setInitCont]= useState(0);
+
 
   return (
     // <Banner/>
@@ -47,15 +51,6 @@ export default function App() {
     // <PickerList/>
     // <TickBox/>
     // <FundComponent/>
-
-    // <AboutYourSelfScreenComponent/>
-    // <AdjustmentPlanScreenComponent/>
-
-
-
-
-
-
 
     // <RegisterScreen/>
     // <OptionScreen/>
@@ -68,9 +63,9 @@ export default function App() {
     // <PortFolioPositionScreen/>
     // <ReportScreen/>
     // <NormalRedemptionScreen/>
-  //  <NormalRedemptionScreen2/>
+   // <NormalRedemptionScreen2/>
 
-    <StoreProvider value={{  goals,setGoals,step,setStep,riskScore,setRiskScore }}>
+    <StoreProvider value={{  goals,setGoals,step,setStep,riskScore,setRiskScore,futValue,setFutValue,tHorizon,setTHorizon,frequency,setFrequency }}>
   <NavigationContainer>
       <AuthNavigator/>
     </NavigationContainer>
