@@ -10,6 +10,7 @@ function TargetAmount(props) {
     const [value, setValue] =useState('');
 
     const handleProceed=()=>{
+      contextData.setFutValue(parseInt(value));
       const nextstep=parseInt(contextData.step)+1
       contextData.setStep(nextstep);
         console.log(value)
