@@ -6,7 +6,7 @@ import AppText from './AppText';
 
 const {height, width}= Dimensions.get('window');
 
-function FundComponent(props) {
+function FundComponent({setShowPlan,fund},Otherprops) {
     return (
         <View style={styles.container}>
             
@@ -19,9 +19,9 @@ function FundComponent(props) {
                 </View>
                 <View style={styles.headerContainer}>
                     <Text style={{fontSize: 20, fontWeight: 'bold'}}>
-                        JS Cash Fund
+                        {fund.name}
                     </Text>
-                    <Text>Islamic High Risk</Text>
+                    <Text>{fund.description}</Text>
                 </View>
             </View>
 
@@ -46,7 +46,7 @@ function FundComponent(props) {
                 <View style={styles.rightContainer}>
                     <Button
                         title='Invest Now'
-                        onPress={()=>console.log('hello')}
+                        onPress={()=>setShowPlan(true)}
                         color='#084877'
                     />
                 </View>
