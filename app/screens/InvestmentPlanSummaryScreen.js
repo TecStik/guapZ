@@ -29,10 +29,12 @@ function InvestmentPlanSummaryScreen(props) {
             <GuazBackContainer/>
 
 {(!showPlan)?
- <FundComponent setShowPlan={setShowPlan} fund={funds[0]}/>:
+    <AdjustmentPlanScreenComponent/>:
+//  <FundComponent setShowPlan={setShowPlan} fund={funds[0]}/>:
  <InvestmentPlanSummaryScreenComponent/>
 }
-          
+
+ 
 
            
         </Screen>
