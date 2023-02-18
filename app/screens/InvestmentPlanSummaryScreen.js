@@ -17,6 +17,8 @@ import FundComponentListScreen from "../components/FundComponentListScreen";
 function InvestmentPlanSummaryScreen(props) {
     const contextData = useContext(StoreContext);
     const[showPlan,setShowPlan]=useState(false);
+    const[showAdjust,setShowAdjust]=useState(false);
+    const[showFunds,setShowFunds]=useState(true);
     console.log("Funds in Investment Plan Summary",contextData.riskScore);
 
     const handleAdjust=()=>{
@@ -28,15 +30,28 @@ function InvestmentPlanSummaryScreen(props) {
             {/* <BackContainer/> */}
             {/* <Banner/> */}
             <GuazBackContainer/>
+            // <AdjustmentPlanScreenComponent setShowPlan={setShowPlan}/>:
 
-{(!showPlan)?
-    // <AdjustmentPlanScreenComponent setShowPlan={setShowPlan}/>:
-//  <FundComponent setShowPlan={setShowPlan} fund={funds}/>
+{(showFunds)?
+
     <FundComponentListScreen 
         setShowPlan={setShowPlan}
         fund={funds}
     />:
+    <></>
+}
+
+    {(!showPlan)?
+            <FundComponentListScreen 
+                setShowPlan={setShowPlan}
+                fund={funds}
+            />:
+            <> </>
+    }
+    {(showPlan)?
  <InvestmentPlanSummaryScreenComponent setShowPlan={setShowPlan}/>
+ :
+ <></>
 }
 
  
