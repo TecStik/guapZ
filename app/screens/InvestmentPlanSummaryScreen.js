@@ -15,11 +15,11 @@ import AdjustmentPlanScreenComponent from '../components/AdjustmentPlanScreenCom
 
 function InvestmentPlanSummaryScreen(props) {
     const contextData = useContext(StoreContext);
-    const[showPlan,setShowPlan]=useState(false);
+    const[showPlan,setShowPlan]=useState(true);
     console.log("Funds in Investment Plan Summary",contextData.riskScore);
 
     const handleAdjust=()=>{
-        console.log("pressed Adjust")
+        console.log("pressed Adjust",setShowPlan);
     }
 
     return (
@@ -29,9 +29,9 @@ function InvestmentPlanSummaryScreen(props) {
             <GuazBackContainer/>
 
 {(!showPlan)?
-    <AdjustmentPlanScreenComponent/>:
-//  <FundComponent setShowPlan={setShowPlan} fund={funds[0]}/>:
- <InvestmentPlanSummaryScreenComponent/>
+    <AdjustmentPlanScreenComponent setShowPlan={setShowPlan}/>:
+ // <FundComponent setShowPlan={setShowPlan} fund={funds[0]}/>:
+ <InvestmentPlanSummaryScreenComponent setShowPlan={setShowPlan}/>
 }
 
  

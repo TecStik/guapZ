@@ -5,10 +5,11 @@ import { View, StyleSheet, ScrollView } from 'react-native';
 import AppText from '../components/AppText';
 import AppButton from '../components/AppButton';
 
-function InvestmentPlanSummaryScreenComponent(props) {
+function InvestmentPlanSummaryScreenComponent({setShowPlan},props) {
     
     const handleAdjust=()=>{
-        console.log("pressed Adjust")
+        console.log("pressed Adjust");
+        setShowPlan(false);
     }
 
     return (

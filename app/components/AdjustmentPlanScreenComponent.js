@@ -5,7 +5,7 @@ import AppText from '../components/AppText';
 import SliderComponent from '../components/SliderComponent';
 import AppButton from '../components/AppButton';
 
-function AdjustmentPlanScreenComponent(props) {
+function AdjustmentPlanScreenComponent({setShowPlan},Otherprops) {
 
     const [sliderData1, setSliderData1] = useState();
     const [sliderData2, setSliderData2] = useState();
@@ -22,7 +22,8 @@ function AdjustmentPlanScreenComponent(props) {
     }
 
     const handlePress=()=>{
-        console.log( sliderData1, " ", sliderData2, " ", sliderData3)
+        console.log( sliderData1, " ", sliderData2, " ", sliderData3,setShowPlan,Otherprops);
+        setShowPlan(true);
     }
 
     return (
