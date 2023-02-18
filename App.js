@@ -31,6 +31,7 @@ import NormalRedemptionScreen from './app/screens/NormalRedemptionScreen';
 import TickBox from './app/components/TickBox';
 import NormalRedemptionScreen2 from './app/screens/NormalRedemptionScreen2';
 import FundComponent from './app/components/FundComponent';
+import FundComponentListScreen from './app/components/FundComponentListScreen';
 
 export default function App() {
   const [goals,setGoals]= useState(["testing"]);
@@ -52,6 +53,8 @@ export default function App() {
     // <PickerList/>
     // <TickBox/>
     // <FundComponent/>
+    // <FundComponentListScreen/>
+
 
     // <RegisterScreen/>
     // <OptionScreen/>

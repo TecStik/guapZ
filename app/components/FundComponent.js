@@ -21,7 +21,9 @@ function FundComponent({setShowPlan,fund},Otherprops) {
                     <Text style={{fontSize: 20, fontWeight: 'bold'}}>
                         {fund.name}
                     </Text>
-                    <Text>{fund.description}</Text>
+                    <Text>
+                        {fund.description}
+                    </Text>
                 </View>
             </View>
 
@@ -64,7 +66,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         borderRadius: width*0.1,
         borderWidth: 2,
-        // overflow: 'hidden'
+        marginVertical: 5,
     },
     upperContainer:{
         width: '90%',
