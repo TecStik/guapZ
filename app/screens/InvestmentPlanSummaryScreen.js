@@ -21,6 +21,13 @@ function InvestmentPlanSummaryScreen(props) {
     const[showFunds,setShowFunds]=useState(true);
     console.log("Funds in Investment Plan Summary",contextData.riskScore);
 
+const handleFundSelect=(fund)=>{
+        console.log("FundSelected",fund);
+        contextData.setFund(fund);
+        setShowFunds(false);
+        setShowPlan(true);
+    }
+
     const handleAdjust=()=>{
         console.log("pressed Adjust",setShowPlan);
     }
@@ -33,6 +40,7 @@ function InvestmentPlanSummaryScreen(props) {
     <FundComponentListScreen 
         setShowPlan={setShowPlan}
         fund={funds}
+        handleFundSelect={handleFundSelect}
     />:
     <></>
 }   

@@ -43,6 +43,7 @@ export default function App() {
   const [pmt,setPmt]= useState(0);
   const [InitCont,setInitCont]= useState(0);
   const [profitRate,setProfitRate]= useState(0.0);
+  const [fund,setFund]= useState(null);
 
 
   return (
@@ -69,7 +70,7 @@ export default function App() {
     // <NormalRedemptionScreen/>
    // <NormalRedemptionScreen2/>
 
-    <StoreProvider value={{  goals,setGoals,step,setStep,riskScore,setRiskScore,futValue,setFutValue,tHorizon,setTHorizon,frequency,setFrequency,profitRate,setProfitRate }}>
+    <StoreProvider value={{  goals,setGoals,step,setStep,riskScore,setRiskScore,futValue,setFutValue,tHorizon,setTHorizon,frequency,setFrequency,profitRate,setProfitRate,fund,setFund }}>
   <NavigationContainer>
       <AuthNavigator/>
     </NavigationContainer>

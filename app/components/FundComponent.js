@@ -6,7 +6,7 @@ import AppText from './AppText';
 
 const {height, width}= Dimensions.get('window');
 
-function FundComponent({setShowPlan,fund},Otherprops) {
+function FundComponent({handleFundSelect,fund},Otherprops) {
     return (
         <View style={styles.container}>
             
@@ -48,7 +48,7 @@ function FundComponent({setShowPlan,fund},Otherprops) {
                 <View style={styles.rightContainer}>
                     <Button
                         title='Invest Now'
-                        onPress={()=>setShowPlan(true)}
+                        onPress={()=>handleFundSelect(fund)}
                         color='#084877'
                     />
                 </View>
