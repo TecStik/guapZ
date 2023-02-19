@@ -68,7 +68,7 @@ setRiskProfile(tempRisk);
           if(questionId<questionData.length-1){
  setquestionId(questionId+1);
       }else{
-        alert("no moreQuest");
+        alert("no more\nQuestions");
        let score= calculateRiskScore(riskProfile);
        console.log("RiskScore final",score);
        contextData.setRiskScore(score)

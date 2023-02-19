@@ -40,7 +40,7 @@ export default function App() {
   const [futValue,setFutValue]= useState(0);
   const [tHorizon,setTHorizon]= useState(0);
   const [frequency,setFrequency]= useState(0);
-  const [pmt,setPmt]= useState(0);
+  const [pmt,setPmt]= useState(100);
   const [InitCont,setInitCont]= useState(0);
   const [profitRate,setProfitRate]= useState(0.0);
   const [fund,setFund]= useState(null);

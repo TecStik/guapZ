@@ -15,8 +15,9 @@ import InvestmentPlanSummary from '../components/InvestmentPlanSummary';
 
 
 function BiScreen(props) {
+  console.log("props inbi",props);
   const contextData = useContext(StoreContext);
-  console.log(" Cntext in BiScreen",contextData);
+
 
   return (
     <Screen>
@@ -30,7 +31,7 @@ function BiScreen(props) {
             <TargetAmount/> :<></>
           }
           {(contextData.step=="2")?
-            <Frequency/> :<></>
+            <Frequency navigation={props.navigation}/> :<></>
           }
           {/* {(contextData.step=="3")?
             <RiskAssessmentResult/> :<></>
