@@ -27,35 +27,26 @@ function InvestmentPlanSummaryScreen(props) {
 
     return (
         <Screen>
-            {/* <BackContainer/> */}
-            {/* <Banner/> */}
+           
             <GuazBackContainer/>
-            // <AdjustmentPlanScreenComponent setShowPlan={setShowPlan}/>:
-
 {(showFunds)?
-
     <FundComponentListScreen 
         setShowPlan={setShowPlan}
         fund={funds}
     />:
     <></>
-}
-
-    {(!showPlan)?
-            <FundComponentListScreen 
-                setShowPlan={setShowPlan}
-                fund={funds}
-            />:
+}   
+ {/* {(showAdjust)?
+            <AdjustmentPlanScreenComponent 
+            setShowPlan={setShowPlan}/>:
             <> </>
-    }
+    } */}
+
     {(showPlan)?
  <InvestmentPlanSummaryScreenComponent setShowPlan={setShowPlan}/>
  :
  <></>
 }
-
- 
-
            
         </Screen>
     );
