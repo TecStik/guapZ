@@ -21,6 +21,7 @@ import GuazBackContainer from './app/components/GuazBackContainer';
 import AdjustmentPlanScreen from './app/screens/AdjustmentPlanScreen';
 import SliderComponent from './app/components/SliderComponent';
 import AboutYourSelfScreen from './app/screens/AboutYourSelfScreen';
+import {FVofAnnuity,AnnuityofFV} from './app/screens/supportingfiles/helperFunctions'
 import FundYourAccountScreen from './app/screens/FundYourAccountScreen';
 import E_WalletScreen from './app/screens/E_WalletScreen';
 import PortFolioPositionScreen from './app/screens/PortFolioPositionScreen';
@@ -38,13 +39,19 @@ export default function App() {
   const [step,setStep]= useState(0);
   const [riskScore,setRiskScore]= useState(0);
   const [futValue,setFutValue]= useState(1000);
-  const [tHorizon,setTHorizon]= useState(36);
+  const [tHorizon,setTHorizon]= useState(120);
   const [frequency,setFrequency]= useState({label:"Month",value:12});
-  const [pmt,setPmt]= useState(105);
+  const [pmt,setPmt]= useState(100);
   const [InitCont,setInitCont]= useState(0);
   const [profitRate,setProfitRate]= useState(0.0);
   const [fund,setFund]= useState(null);
 
+
+  useEffect(() => {
+  const expVal=FVofAnnuity(10,frequency.value,tHorizon/frequency.value,pmt);
+   console.log("Expected FV",10,frequency.value,tHorizon/frequency.value,pmt,expVal)
+       
+       }, [])
 
   return (
     // <Banner/>
