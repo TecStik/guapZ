@@ -37,10 +37,10 @@ export default function App() {
   const [goals,setGoals]= useState(["testing"]);
   const [step,setStep]= useState(0);
   const [riskScore,setRiskScore]= useState(0);
-  const [futValue,setFutValue]= useState(0);
-  const [tHorizon,setTHorizon]= useState(0);
+  const [futValue,setFutValue]= useState(1000);
+  const [tHorizon,setTHorizon]= useState(36);
   const [frequency,setFrequency]= useState({label:"Month",value:12});
-  const [pmt,setPmt]= useState(0);
+  const [pmt,setPmt]= useState(105);
   const [InitCont,setInitCont]= useState(0);
   const [profitRate,setProfitRate]= useState(0.0);
   const [fund,setFund]= useState(null);

@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
         borderRadius: 15,
     },
     valueText:{
-        fontSize: 30,
+        fontSize: 20,
         fontWeight: 'bold',
     },
     slider:{

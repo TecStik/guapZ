@@ -9,9 +9,9 @@ import AppButton from '../components/AppButton';
 function AdjustmentPlanScreenComponent({setShowPlan},Otherprops) {
     const contextData = useContext(StoreContext);
 
-    const [sliderData1, setSliderData1] = useState(contextData.futValue);
-    const [sliderData2, setSliderData2] = useState();
-    const [sliderData3, setSliderData3] = useState();
+    const [sliderData1, setSliderData1] = useState(contextData.pmt);
+    const [sliderData2, setSliderData2] = useState(contextData.tHorizon);
+    const [sliderData3, setSliderData3] = useState(contextData.futValue);
 
     const handleSlider1=(sliderData)=>{
         setSliderData1(sliderData)
@@ -40,7 +40,7 @@ function AdjustmentPlanScreenComponent({setShowPlan},Otherprops) {
 
                 <AppText>Change Periodic Contribution</AppText>
                 <SliderComponent
-                    high={100}
+                    high={100000}
                     low={0}
                     title={'Ruppes'}
                     onPress={handleSlider1}
@@ -49,7 +49,7 @@ function AdjustmentPlanScreenComponent({setShowPlan},Otherprops) {
 
                 <AppText>Change Time Horizon</AppText>
                 <SliderComponent
-                    high={20}
+                    high={240}
                     low={0}
                     title={'Month'}
                     onPress={handleSlider2}
@@ -58,7 +58,7 @@ function AdjustmentPlanScreenComponent({setShowPlan},Otherprops) {
 
                 <AppText>Change Target Amount</AppText>
                 <SliderComponent
-                    high={20}
+                    high={1000000}
                     low={0}
                     title={'Rupees'}
                     onPress={handleSlider3}
