@@ -51,7 +51,7 @@ export default function App() {
   const expVal=FVofAnnuity(10,frequency.value,tHorizon/frequency.value,pmt);
    console.log("Expected FV",10,frequency.value,tHorizon/frequency.value,pmt,expVal)
        
-       }, [])
+       }, [frequency,tHorizon,pmt])
 
   return (
     // <Banner/>

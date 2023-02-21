@@ -29,12 +29,12 @@ const  FV=(rate, nper, pmt, pv, type)=>{
   } 
  
   export const FVofAnnuity=( rate, freq,n,pmt)=>{
-    console.log("Inputs in FV of Annuity",rate, freq,n,pmt);
+  //  console.log("Inputs in FV of Annuity",rate, freq,n,pmt);
     var nper=n*freq;
     var r=(rate/100)/freq;
     const fValue= FV(r,nper,pmt,0,0);
 
-   console.log("FV of Annuity",r,nper,pmt,0,0)
+  // console.log("FV of Annuity",r,nper,pmt,0,0)
     return fValue;
     
   }
