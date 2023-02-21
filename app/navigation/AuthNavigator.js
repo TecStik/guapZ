@@ -26,10 +26,10 @@ import PortFolioPositionScreen from "../screens/PortFolioPositionScreen";// Port
 const Stack = createNativeStackNavigator();
 
 const AuthNavigator=()=> (
-    <Stack.Navigator>
+        <Stack.Navigator>
+            <Stack.Screen name='TVM' component={BiScreen} options={{headerShown: false}} />
                          <Stack.Screen name='Investment Plan SummaryScreen' component={InvestmentPlanSummaryScreen} options={{headerShown: false}} />
          <Stack.Screen name='Risk Questionaire' component={RiskQuestionaire} options={{headerShown: false}} />
-                 <Stack.Screen name='TVM' component={BiScreen} options={{headerShown: false}} />
 
                  <Stack.Screen name='Adjust Portfolio' component={AdjustmentPlanScreen} options={{headerShown: false}} />
                          <Stack.Screen name='PortFolioPositionScreen' component={PortFolioPositionScreen} options={{headerShown: false}} />

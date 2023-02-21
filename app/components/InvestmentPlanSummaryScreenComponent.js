@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useState,useContext } from "react";
 
 import { View, StyleSheet, ScrollView } from 'react-native';
-
+import StoreContext from '../screens/GlobalState';
 import AppText from '../components/AppText';
 import AppButton from '../components/AppButton';
 
 function InvestmentPlanSummaryScreenComponent({setShowPlan},props) {
-    
+    const contextData = useContext(StoreContext);
     const handleAdjust=()=>{
         console.log("pressed Adjust");
         setShowPlan(false);
@@ -30,7 +30,7 @@ function InvestmentPlanSummaryScreenComponent({setShowPlan},props) {
                         </View>
                         <View style={styles.rightColumn}>
                             <AppText style={{textAlignVertical: 'center'}}>
-                                USD
+                                USD{contextData.futValue}
                             </AppText>
                         </View>    
                     </View>
@@ -49,7 +49,7 @@ function InvestmentPlanSummaryScreenComponent({setShowPlan},props) {
                     <View style={[styles.row, {backgroundColor: '#CFD9E8'}]}>
                         <View style={styles.leftColumn}>
                             <AppText style={{fontWeight: 'bold', textAlignVertical: 'center',}}>
-                                Monthly Payment
+                            {contextData.frequency.label} Payment
                             </AppText>
                         </View>
                         <View style={styles.rightColumn}>

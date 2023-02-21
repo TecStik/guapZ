@@ -7,7 +7,7 @@ import AppTextInput from './AppTextInput';
 import ToggleButton from './ToggleButton';
 import StoreContext from '../screens/GlobalState';
 
-function Frequency(props) {
+function Frequency({navigation},props) {
   const contextData = useContext(StoreContext);
     const [value, setValue] =useState('');
     
@@ -20,7 +20,8 @@ function Frequency(props) {
       contextData.setFrequency(parseInt(value));
       const{futValue,tHorizon,frequency}=contextData;
         console.log("TVM Data",futValue,tHorizon,frequency);
-        contextData.setStep(0);
+     //   contextData.setStep(0);
+     navigation.navigate("Risk Questionaire");
     }
     const handleMonthly=()=>{
       console.log('handleMonthly');
@@ -29,7 +30,8 @@ function Frequency(props) {
       setSemiAnnualy(false);
       setAnnual(false);
       setValue('Monthly');
-      contextData.setFrequency(parseInt(12));
+      let freq={label:"Monthly",value:12};
+      contextData.setFrequency(freq);
     }
     const handleQuarterly=()=>{
       console.log('handleQuarterly');
@@ -38,7 +40,8 @@ function Frequency(props) {
       setSemiAnnualy(false);
       setAnnual(false);
       setValue('Quarterly');
-      contextData.setFrequency(parseInt(4));
+      let freq={label:"Quarterly",value:4};
+      contextData.setFrequency(freq);
     }
     const handleSemiAnnual=()=>{
       console.log('handleSemiAnnual');
@@ -47,7 +50,8 @@ function Frequency(props) {
       setSemiAnnualy(true);
       setAnnual(false);
       setValue('Semi Annual');
-      contextData.setFrequency(parseInt(2));
+      let freq={label:"Semi-annual",value:2};
+      contextData.setFrequency(freq);
     }
     const handleAnnual=()=>{
       console.log('handleAnnual');
@@ -56,7 +60,8 @@ function Frequency(props) {
       setSemiAnnualy(false);
       setAnnual(true);
       setValue('Annual');
-      contextData.setFrequency(parseInt(1));
+      let freq={label:"Annual",value:1}
+      contextData.setFrequency(freq);
     }
 
     return (

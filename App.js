@@ -39,7 +39,7 @@ export default function App() {
   const [riskScore,setRiskScore]= useState(0);
   const [futValue,setFutValue]= useState(0);
   const [tHorizon,setTHorizon]= useState(0);
-  const [frequency,setFrequency]= useState(0);
+  const [frequency,setFrequency]= useState({label:"Month",value:12});
   const [pmt,setPmt]= useState(0);
   const [InitCont,setInitCont]= useState(0);
   const [profitRate,setProfitRate]= useState(0.0);

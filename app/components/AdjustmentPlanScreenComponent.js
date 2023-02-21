@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, {useState,useContext} from 'react';
+import StoreContext from '../screens/GlobalState';
 
 import { View, StyleSheet, ScrollView } from 'react-native';
 import AppText from '../components/AppText';
@@ -6,8 +7,9 @@ import SliderComponent from '../components/SliderComponent';
 import AppButton from '../components/AppButton';
 
 function AdjustmentPlanScreenComponent({setShowPlan},Otherprops) {
+    const contextData = useContext(StoreContext);
 
-    const [sliderData1, setSliderData1] = useState();
+    const [sliderData1, setSliderData1] = useState(contextData.futValue);
     const [sliderData2, setSliderData2] = useState();
     const [sliderData3, setSliderData3] = useState();
 

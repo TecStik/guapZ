@@ -16,7 +16,7 @@ import InvestmentPlanSummary from '../components/InvestmentPlanSummary';
 
 function BiScreen(props) {
   const contextData = useContext(StoreContext);
-  console.log(" Cntext in BiScreen",contextData);
+  console.log(" Cntext in BiScreen",props);
 
   return (
     <Screen>
@@ -24,13 +24,13 @@ function BiScreen(props) {
         <MultiBanner/>
         <ScrollView>
           {(contextData.step=="0")?
-            <TimeHorizon/>:<></>
+            <TimeHorizon navigation={props.navigation}/>:<></>
           }
            {(contextData.step=="1")?
-            <TargetAmount/> :<></>
+            <TargetAmount navigation={props.navigation}/> :<></>
           }
           {(contextData.step=="2")?
-            <Frequency/> :<></>
+            <Frequency navigation={props.navigation}/> :<></>
           }
           {/* {(contextData.step=="3")?
             <RiskAssessmentResult/> :<></>
