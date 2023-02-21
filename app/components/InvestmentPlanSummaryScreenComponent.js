@@ -1,12 +1,13 @@
-import React, { useState,useContext } from "react";
+import {React,useContext} from 'react';
 
 import { View, StyleSheet, ScrollView } from 'react-native';
 import StoreContext from '../screens/GlobalState';
 import AppText from '../components/AppText';
 import AppButton from '../components/AppButton';
+import StoreContext from '../screens/GlobalState';
 
 function InvestmentPlanSummaryScreenComponent({setShowPlan},props) {
-    const contextData = useContext(StoreContext);
+     const contextData = useContext(StoreContext);
     const handleAdjust=()=>{
         console.log("pressed Adjust");
         setShowPlan(false);

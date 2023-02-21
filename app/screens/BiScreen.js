@@ -15,6 +15,7 @@ import InvestmentPlanSummary from '../components/InvestmentPlanSummary';
 
 
 function BiScreen(props) {
+  console.log("props inbi",props);
   const contextData = useContext(StoreContext);
   console.log(" Cntext in BiScreen",props);
 

@@ -7,7 +7,7 @@ import AppTextInput from './AppTextInput';
 import ToggleButton from './ToggleButton';
 import StoreContext from '../screens/GlobalState';
 
-function Frequency({navigation},props) {
+function Frequency({navigation},otherprops) {
   const contextData = useContext(StoreContext);
     const [value, setValue] =useState('');
     
@@ -20,8 +20,8 @@ function Frequency({navigation},props) {
       contextData.setFrequency(parseInt(value));
       const{futValue,tHorizon,frequency}=contextData;
         console.log("TVM Data",futValue,tHorizon,frequency);
-     //   contextData.setStep(0);
-     navigation.navigate("Risk Questionaire");
+       // contextData.setStep(0);
+       navigation.navigate("Risk Questionaire");
     }
     const handleMonthly=()=>{
       console.log('handleMonthly');
