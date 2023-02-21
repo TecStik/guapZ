@@ -1,7 +1,7 @@
 import React, { useState,useContext } from "react";
 
 import { View, StyleSheet, ScrollView } from 'react-native';
-import StoreContext from './GlobalState'
+import StoreContext from './GlobalState';
 import BackContainer from '../components/BackContainer';
 import Banner from '../components/Banner';
 import GuazBackContainer from '../components/GuazBackContainer';
@@ -9,52 +9,41 @@ import Screen from '../components/Screen';
 import AppText from '../components/AppText';
 import AppButton from '../components/AppButton';
 import { funds }  from './supportingfiles/dummydata';
+import FundComponentListScreen from '../components/FundComponentListScreen';
 import FundComponent from '../components/FundComponent';
 import InvestmentPlanSummaryScreenComponent from '../components/InvestmentPlanSummaryScreenComponent';
 import AdjustmentPlanScreenComponent from '../components/AdjustmentPlanScreenComponent';
-import FundComponentListScreen from "../components/FundComponentListScreen";
 
 function InvestmentPlanSummaryScreen(props) {
     const contextData = useContext(StoreContext);
     const[showPlan,setShowPlan]=useState(false);
-    const[showAdjust,setShowAdjust]=useState(false);
-    const[showFunds,setShowFunds]=useState(true);
+    const[showAdjust,setShowAdjust]=useState(true);
+    const[showFunds,setShowFunds]=useState(false);
     console.log("Funds in Investment Plan Summary",contextData.riskScore);
 
-const handleFundSelect=(fund)=>{
-        console.log("FundSelected",fund);
-        contextData.setFund(fund);
-        setShowFunds(false);
-        setShowPlan(true);
-    }
-
     const handleAdjust=()=>{
-        console.log("pressed Adjust",setShowPlan);
+        console.log("pressed Adjust")
     }
 
     return (
         <Screen>
-           
+            {/* <BackContainer/> */}
+            {/* <Banner/> */}
             <GuazBackContainer/>
-{(showFunds)?
-    <FundComponentListScreen 
-        setShowPlan={setShowPlan}
-        fund={funds}
-        handleFundSelect={handleFundSelect}
-    />:
-    <></>
-}   
- {/* {(showAdjust)?
-            <AdjustmentPlanScreenComponent 
-            setShowPlan={setShowPlan}/>:
-            <> </>
-    } */}
 
-    {(showPlan)?
- <InvestmentPlanSummaryScreenComponent setShowPlan={setShowPlan}/>
- :
- <></>
+{(showAdjust)?
+    <AdjustmentPlanScreenComponent setShowPlan={setShowPlan}/>:<></>
+//  <FundComponent setShowPlan={setShowPlan} fund={funds[0]}/>:
+
 }
+{(showFunds)?
+   
+  <FundComponentListScreen setShowPlan={setShowPlan} fund={funds}/>:<></>
+}
+{(showPlan)?
+   <InvestmentPlanSummaryScreenComponent/>:<></>
+ }
+
            
         </Screen>
     );

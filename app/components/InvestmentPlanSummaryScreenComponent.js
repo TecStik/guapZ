@@ -4,7 +4,7 @@ import { View, StyleSheet, ScrollView } from 'react-native';
 import StoreContext from '../screens/GlobalState';
 import AppText from '../components/AppText';
 import AppButton from '../components/AppButton';
-import StoreContext from '../screens/GlobalState';
+
 
 function InvestmentPlanSummaryScreenComponent({setShowPlan},props) {
      const contextData = useContext(StoreContext);
