@@ -39,17 +39,19 @@ export default function App() {
   const [step,setStep]= useState(0);
   const [riskScore,setRiskScore]= useState(0);
   const [futValue,setFutValue]= useState(1000);
-  const [tHorizon,setTHorizon]= useState(120);
+  const [tHorizon,setTHorizon]= useState(10.0);
   const [frequency,setFrequency]= useState({label:"Month",value:12});
   const [pmt,setPmt]= useState(100);
   const [InitCont,setInitCont]= useState(0);
-  const [profitRate,setProfitRate]= useState(0.0);
+  const [profitRate,setProfitRate]= useState(10.0);
   const [fund,setFund]= useState(null);
 
 
   useEffect(() => {
-  const expVal=FVofAnnuity(10,frequency.value,tHorizon/frequency.value,pmt);
-   console.log("Expected FV",10,frequency.value,tHorizon/frequency.value,pmt,expVal)
+  const expVal=FVofAnnuity(10,frequency.value,tHorizon,pmt);
+  const reqPmt=AnnuityofFV(profitRate,frequency.value,tHorizon,futValue);
+   console.log("Expected FV",10,frequency.value,tHorizon*frequency.value,pmt,expVal);
+   console.log("Required PMT",profitRate,frequency.value,tHorizon,futValue,reqPmt);
        
        }, [frequency,tHorizon,pmt])
 
