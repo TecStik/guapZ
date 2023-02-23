@@ -44,16 +44,16 @@ export default function App() {
   const [pmt,setPmt]= useState(100);
   const [InitCont,setInitCont]= useState(0);
   const [profitRate,setProfitRate]= useState(10.0);
-  const [fund,setFund]= useState(null);
+  const [fund,setFund]= useState({return:"10"});
 
 
   useEffect(() => {
   const expVal=FVofAnnuity(10,frequency.value,tHorizon,pmt);
-  const reqPmt=AnnuityofFV(profitRate,frequency.value,tHorizon,futValue);
+  const reqPmt=AnnuityofFV(parseInt(fund.return),frequency.value,tHorizon,futValue);
    console.log("Expected FV",10,frequency.value,tHorizon*frequency.value,pmt,expVal);
-   console.log("Required PMT",profitRate,frequency.value,tHorizon,futValue,reqPmt);
+   console.log("Required PMT",parseInt(fund.return),frequency.value,tHorizon,futValue,reqPmt);
        
-       }, [frequency,tHorizon,pmt])
+       }, [frequency,tHorizon,pmt,futValue])
 
   return (
     // <Banner/>
@@ -79,7 +79,7 @@ export default function App() {
     // <NormalRedemptionScreen/>
    // <NormalRedemptionScreen2/>
 
-    <StoreProvider value={{  goals,setGoals,step,setStep,riskScore,setRiskScore,futValue,setFutValue,tHorizon,setTHorizon,frequency,setFrequency,profitRate,setProfitRate,fund,setFund }}>
+    <StoreProvider value={{  goals,setGoals,step,setStep,riskScore,setRiskScore,futValue,setFutValue,tHorizon,setTHorizon,frequency,setFrequency,profitRate,setProfitRate,fund,setFund,pmt,setPmt }}>
   <NavigationContainer>
       <AuthNavigator/>
     </NavigationContainer>

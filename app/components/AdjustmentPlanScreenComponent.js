@@ -14,14 +14,19 @@ function AdjustmentPlanScreenComponent({setShowPlan},Otherprops) {
     const [sliderData3, setSliderData3] = useState(contextData.futValue);
 
     const handleSlider1=(sliderData)=>{
-        setSliderData1(sliderData)
+        setSliderData1(sliderData);
+        contextData.setPmt(parseInt(sliderData));
     }
     const handleSlider2=(sliderData)=>{
-        setSliderData2(sliderData)
+        setSliderData2(sliderData);
+        contextData.setTHorizon(parseInt(sliderData));
+        console.log("changed TH",sliderData,contextData.tHorizon)
     }
     const handleSlider3=(sliderData)=>{
-        setSliderData3(sliderData)
-    }
+        setSliderData3(sliderData);
+        contextData.setFutValue(parseInt(sliderData));
+    }  
+    
 
     const handlePress=()=>{
         console.log( sliderData1, " ", sliderData2, " ", sliderData3,setShowPlan,Otherprops);
