@@ -33,7 +33,7 @@ function FundComponent({handleFundSelect,fund},Otherprops) {
                         Return P.A
                     </Text>
                     <Text style={{fontWeight: 'bold'}}>
-                        2.9%
+                       {fund.return}
                     </Text>
 
                 </View>

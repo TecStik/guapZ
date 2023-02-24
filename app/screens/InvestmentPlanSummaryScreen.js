@@ -17,17 +17,17 @@ import AdjustmentPlanScreenComponent from '../components/AdjustmentPlanScreenCom
 function InvestmentPlanSummaryScreen(props) {
     const contextData = useContext(StoreContext);
     const[showPlan,setShowPlan]=useState(false);
-    const[showAdjust,setShowAdjust]=useState(true);
-    const[showFunds,setShowFunds]=useState(false);
+    const[showAdjust,setShowAdjust]=useState(false);
+    const[showFunds,setShowFunds]=useState(true);
     console.log("Funds in Investment Plan Summary",contextData.riskScore);
 
-    const handleFundSelect=(fund)=>{
+    const handleFundSelect=async(fund)=>{
         contextData.setFund(fund);
         setShowFunds(false);
         setShowPlan(true);
     }
 
-    const handleAdjust=()=>{
+    const handleAdjust=async()=>{
         console.log("pressed Adjust");
         setShowAdjust(true);
         setShowPlan(false);
@@ -46,7 +46,7 @@ function InvestmentPlanSummaryScreen(props) {
 }
 {(showFunds)?
    
-  <FundComponentListScreen setShowPlan={setShowPlan} fund={funds}/>:<></>
+  <FundComponentListScreen setShowPlan={setShowPlan} handleFundSelect={handleFundSelect} fund={funds}/>:<></>
 }
 {(showPlan)?
    <InvestmentPlanSummaryScreenComponent handleAdjust={handleAdjust}/>:<></>

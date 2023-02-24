@@ -53,7 +53,7 @@ export default function App() {
    console.log("Expected FV",10,frequency.value,tHorizon*frequency.value,pmt,expVal);
    console.log("Required PMT",parseInt(fund.return),frequency.value,tHorizon,futValue,reqPmt);
        
-       }, [frequency,tHorizon,pmt,futValue])
+       }, [frequency,tHorizon,pmt,futValue,fund])
 
   return (
     // <Banner/>

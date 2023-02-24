@@ -17,7 +17,7 @@ function Frequency({navigation},otherprops) {
     const [annual, setAnnual] =useState(false);
 
     const handleProceed=()=>{
-      contextData.setFrequency(parseInt(value));
+    //  contextData.setFrequency(parseInt(value));
       const{futValue,tHorizon,frequency}=contextData;
         console.log("TVM Data",futValue,tHorizon,frequency);
        // contextData.setStep(0);
@@ -30,7 +30,7 @@ function Frequency({navigation},otherprops) {
       setSemiAnnualy(false);
       setAnnual(false);
       setValue('Monthly');
-      let freq={label:"Monthly",value:12};
+      const freq={label:"Monthly",value:12};
       contextData.setFrequency(freq);
     }
     const handleQuarterly=()=>{
@@ -40,7 +40,7 @@ function Frequency({navigation},otherprops) {
       setSemiAnnualy(false);
       setAnnual(false);
       setValue('Quarterly');
-      let freq={label:"Quarterly",value:4};
+      const freq={label:"Quarterly",value:4};
       contextData.setFrequency(freq);
     }
     const handleSemiAnnual=()=>{
@@ -50,7 +50,7 @@ function Frequency({navigation},otherprops) {
       setSemiAnnualy(true);
       setAnnual(false);
       setValue('Semi Annual');
-      let freq={label:"Semi-annual",value:2};
+      const freq={label:"Semi-annual",value:2};
       contextData.setFrequency(freq);
     }
     const handleAnnual=()=>{
