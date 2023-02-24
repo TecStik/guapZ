@@ -132,7 +132,7 @@ contribution:"what will be your periodic contribution"
 {
             name:"GuapzLowRisk1",
             description:"Islamic low risk fund",
-            return:"127",
+            return:"30",
             riskScore:"4",
             icon:""
 
@@ -140,7 +140,7 @@ contribution:"what will be your periodic contribution"
         {
             name:"GuapzLowRisk2",
             description:"Islamic low risk fund",
-            return:"125",
+            return:"25",
             riskScore:"4",
             icon:""
 
@@ -149,7 +149,7 @@ contribution:"what will be your periodic contribution"
         {
             "name":"GuapzLowRisk2",
             "description":"Islamic low risk fund",
-            "return":"125",
+            "return":"15",
             "riskScore":"4",
             "icon":""
 

@@ -6,12 +6,12 @@ import AppText from '../components/AppText';
 import AppButton from '../components/AppButton';
 
 
-function InvestmentPlanSummaryScreenComponent({setShowPlan},props) {
+function InvestmentPlanSummaryScreenComponent({setShowPlan,handleAdjust},props) {
      const contextData = useContext(StoreContext);
-    const handleAdjust=()=>{
-        console.log("pressed Adjust");
-        setShowPlan(false);
-    }
+    // const handleAdjust=()=>{
+    //     console.log("pressed Adjust");
+    //     setShowPlan(false);
+    // }
 
     return (
         <ScrollView>

@@ -20,6 +20,7 @@ const  FV=(rate, nper, pmt, pv, type)=>{
   }
   // calculate annuity of FV
   export const AnnuityofFV=( rate, freq,n,fv)=>{
+    console.log("Inputs in PMT of FV",rate, freq,n,pmt);
     var nper=n*freq;
     var r=(rate/100)/freq;
     const pmt= annuity(r,nper,fv,0,0);
