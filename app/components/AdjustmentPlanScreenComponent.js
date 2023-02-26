@@ -73,7 +73,7 @@ function AdjustmentPlanScreenComponent({setShowPlan},Otherprops) {
                 </View>
 
 
-                <AppText>Change Periodic Contribution</AppText>
+                <AppText>Change {contextData.frequency.label}ly Contribution</AppText>
                 <SliderComponent
                     high={100000}
                     low={0}
