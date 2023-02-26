@@ -14,7 +14,7 @@ function SliderComponent({ high, low, thumbSize = 2, onPress, value, title }) {
     const [data, setSliderData] = useState(10);
     return (
         <View style={styles.container}>
-            <View style={{ width: '20%', height: '90%', alignItems: 'center', marginTop: 5}}>
+            <View style={{ width: '25%', height: '90%', alignItems: 'center', marginTop: 5}}>
                 <View style={styles.display}>
                     <Text style={styles.valueText}>
                         {value}

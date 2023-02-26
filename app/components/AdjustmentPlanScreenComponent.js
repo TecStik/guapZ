@@ -1,7 +1,7 @@
 import React, {useState,useContext} from 'react';
 import StoreContext from '../screens/GlobalState';
 
-import { View, StyleSheet, ScrollView } from 'react-native';
+import { View, StyleSheet, ScrollView, Text } from 'react-native';
 import AppText from '../components/AppText';
 import SliderComponent from '../components/SliderComponent';
 import AppButton from '../components/AppButton';
@@ -40,6 +40,36 @@ function AdjustmentPlanScreenComponent({setShowPlan},Otherprops) {
                     <AppText style={styles.heading}>
                         Adjust your Plan
                     </AppText>
+                </View>
+
+                <View style={{width: '90%', alignSelf: 'center'}}>
+                    <View style={{width: '100%', flexDirection: 'row' ,}}>
+                        <View style={{width: '33%', justifyContent:'center', alignItems: 'center', paddingVertical: 10 ,backgroundColor: 'lightblue', borderWidth: 1,}}>
+                            <Text>Target</Text>
+                        </View>
+                        <View style={{width: '33%', justifyContent:'center', alignItems: 'center', paddingVertical: 10 ,backgroundColor: 'lightblue',  borderWidth: 1,}}>
+                            <Text>Expected</Text>
+                        </View>
+                        <View style={{width: '34%', justifyContent:'center', alignItems: 'center', paddingVertical: 10 ,backgroundColor: 'lightblue',  borderWidth: 1,}}>
+                            <Text>Deficit/Surplus</Text>
+                        </View>
+
+                    </View>
+
+                    <View style={{width: '100%', flexDirection: 'row',}}>
+                        <View style={{width: '33%', justifyContent:'center', alignItems: 'center', paddingVertical: 10 ,backgroundColor: 'white', borderWidth: 1,}}>
+                            <Text>XXX</Text>
+                        </View>
+                        <View style={{width: '33%', justifyContent:'center', alignItems: 'center', paddingVertical: 10 ,backgroundColor: 'white',  borderWidth: 1,}}>
+                            <Text>XXX</Text>
+                        </View>
+                        <View style={{width: '34%', justifyContent:'center', alignItems: 'center', paddingVertical: 10 ,backgroundColor: 'white',  borderWidth: 1,}}>
+                            <Text>XXX</Text>
+                        </View>
+
+                    </View>
+
+
                 </View>
 
 

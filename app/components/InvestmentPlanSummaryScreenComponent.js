@@ -23,6 +23,7 @@ function InvestmentPlanSummaryScreenComponent({setShowPlan,handleAdjust},props) 
                 </View>
 
                 <View style={styles.table}>
+
                     <View style={[styles.row, {backgroundColor: '#CFD9E8'}]}>
                         <View style={styles.leftColumn}>
                             <AppText style={{fontWeight: 'bold', textAlignVertical: 'center',}}>
@@ -35,22 +36,37 @@ function InvestmentPlanSummaryScreenComponent({setShowPlan,handleAdjust},props) 
                             </AppText>
                         </View>    
                     </View>
+
+                                        
                     <View style={[styles.row, {backgroundColor: 'white'}]}>
                         <View style={styles.leftColumn }>
                             <AppText style={{fontWeight: 'bold', textAlignVertical: 'center',}}>
-                                Time Period
+                                Expected Amount
                             </AppText>
                         </View>
                         <View style={styles.rightColumn}>
                             <AppText style={{textAlignVertical: 'center'}}>
-                                XX Months
+                                USD 
                             </AppText>
                         </View>    
                     </View>
                     <View style={[styles.row, {backgroundColor: '#CFD9E8'}]}>
                         <View style={styles.leftColumn}>
                             <AppText style={{fontWeight: 'bold', textAlignVertical: 'center',}}>
-                            {contextData.frequency.label} Payment
+                                Time Period
+                            </AppText>
+                        </View>
+                        <View style={styles.rightColumn}>
+                            <AppText style={{textAlignVertical: 'center'}}>
+                                XXX Months
+                            </AppText>
+                        </View>    
+                    </View>
+
+                    <View style={[styles.row, {backgroundColor: 'white'}]}>
+                        <View style={styles.leftColumn }>
+                            <AppText style={{fontWeight: 'bold', textAlignVertical: 'center',}}>
+                                {contextData.frequency.label} Payment
                             </AppText>
                         </View>
                         <View style={styles.rightColumn}>
@@ -59,6 +75,19 @@ function InvestmentPlanSummaryScreenComponent({setShowPlan,handleAdjust},props) 
                             </AppText>
                         </View>    
                     </View>
+                    <View style={[styles.row, {backgroundColor: '#CFD9E8'}]}>
+                        <View style={styles.leftColumn}>
+                            <AppText style={{fontWeight: 'bold', textAlignVertical: 'center',}}>
+                            
+                            </AppText>
+                        </View>
+                        <View style={styles.rightColumn}>
+                            <AppText style={{textAlignVertical: 'center'}}>
+                                
+                            </AppText>
+                        </View>    
+                    </View>
+
                 </View>
 
                 <View style={styles.detail}>
@@ -96,17 +125,18 @@ const styles = StyleSheet.create({
         fontSize: 22,
     },
     table:{
-        width: '100%',
-        height: 120,
+        width: '95%',
+        // height: 120,
         borderWidth: 2,
         borderColor: '#053E94',
         // backgroundColor: 'red',
         marginBottom: 20,
+        alignSelf: 'center',
         justifyContent: 'space-between',
     },
     row:{
         width: '100%',
-        height: '33.3%',
+        // height: '33.3%',
         flexDirection: 'row',
         borderTopWidth: 2,
         borderColor: '#053E94',
@@ -114,13 +144,13 @@ const styles = StyleSheet.create({
     },
     leftColumn:{
         width: '55%',
-        height: '100%',
+        // height: '100%',
         paddingLeft: 10,
         // backgroundColor: 'orange',
     },
     rightColumn:{
         width: '45%',
-        height: '100%',
+        // height: '100%',
         // backgroundColor: 'green',
     },
     detail:{
