@@ -53,6 +53,7 @@ export default function App() {
   const exp=FVofAnnuity(10,frequency.value,tHorizon,pmt);
   const req=AnnuityofFV(parseInt(fund.return),frequency.value,tHorizon,futValue);
   setReqPmt(req);
+  setExpVal(exp);
    console.log("Expected FV",parseInt(fund.return),frequency.value,tHorizon,pmt,exp);
    console.log("Required PMT",parseInt(fund.return),frequency.value,tHorizon,futValue,req);
    
@@ -83,7 +84,7 @@ export default function App() {
     // <NormalRedemptionScreen/>
    // <NormalRedemptionScreen2/>
 
-    <StoreProvider value={{  goals,setGoals,step,setStep,riskScore,setRiskScore,futValue,setFutValue,tHorizon,setTHorizon,frequency,setFrequency,profitRate,setProfitRate,fund,setFund,pmt,setPmt }}>
+    <StoreProvider value={{  goals,setGoals,step,setStep,riskScore,setRiskScore,futValue,setFutValue,tHorizon,setTHorizon,frequency,setFrequency,profitRate,setProfitRate,fund,setFund,pmt,setPmt,expVal,setExpVal }}>
   <NavigationContainer>
       <AuthNavigator/>
     </NavigationContainer>

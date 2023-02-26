@@ -58,10 +58,10 @@ function AdjustmentPlanScreenComponent({setShowPlan},Otherprops) {
 
                     <View style={{width: '100%', flexDirection: 'row',}}>
                         <View style={{width: '33%', justifyContent:'center', alignItems: 'center', paddingVertical: 10 ,backgroundColor: 'white', borderWidth: 1,}}>
-                            <Text>XXX</Text>
+                            <Text>{contextData.futValue}</Text>
                         </View>
                         <View style={{width: '33%', justifyContent:'center', alignItems: 'center', paddingVertical: 10 ,backgroundColor: 'white',  borderWidth: 1,}}>
-                            <Text>XXX</Text>
+                            <Text>{contextData.expVal}</Text>
                         </View>
                         <View style={{width: '34%', justifyContent:'center', alignItems: 'center', paddingVertical: 10 ,backgroundColor: 'white',  borderWidth: 1,}}>
                             <Text>XXX</Text>
