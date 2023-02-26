@@ -30,7 +30,7 @@ function Frequency({navigation},otherprops) {
       setSemiAnnualy(false);
       setAnnual(false);
       setValue('Monthly');
-      const freq={label:"Monthly",value:12};
+      const freq={label:"Month",value:12};
       contextData.setFrequency(freq);
     }
     const handleQuarterly=()=>{
@@ -40,7 +40,7 @@ function Frequency({navigation},otherprops) {
       setSemiAnnualy(false);
       setAnnual(false);
       setValue('Quarterly');
-      const freq={label:"Quarterly",value:4};
+      const freq={label:"Quarter",value:4};
       contextData.setFrequency(freq);
     }
     const handleSemiAnnual=()=>{

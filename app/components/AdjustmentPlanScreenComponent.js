@@ -64,7 +64,7 @@ function AdjustmentPlanScreenComponent({setShowPlan},Otherprops) {
                             <Text>{contextData.expVal}</Text>
                         </View>
                         <View style={{width: '34%', justifyContent:'center', alignItems: 'center', paddingVertical: 10 ,backgroundColor: 'white',  borderWidth: 1,}}>
-                            <Text>{contextData.futValue-contextData.expVal}</Text>
+                            <Text>{(contextData.futValue-contextData.expVal).toFixed(2)}</Text>
                         </View>
 
                     </View>
