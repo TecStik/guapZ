@@ -46,7 +46,7 @@ function InvestmentPlanSummaryScreenComponent({setShowPlan,handleAdjust},props) 
                         </View>
                         <View style={styles.rightColumn}>
                             <AppText style={{textAlignVertical: 'center'}}>
-                                USD 
+                            USD{contextData.expVal}
                             </AppText>
                         </View>    
                     </View>
@@ -66,24 +66,24 @@ function InvestmentPlanSummaryScreenComponent({setShowPlan,handleAdjust},props) 
                     <View style={[styles.row, {backgroundColor: 'white'}]}>
                         <View style={styles.leftColumn }>
                             <AppText style={{fontWeight: 'bold', textAlignVertical: 'center',}}>
-                                {contextData.frequency.label} Payment
+                                Preferred Payment
                             </AppText>
                         </View>
                         <View style={styles.rightColumn}>
                             <AppText style={{textAlignVertical: 'center'}}>
-                                XXX USD/Month
-                            </AppText>
+                                USD {contextData.pmt} {contextData.frequency.label}
+ly                            </AppText>
                         </View>    
                     </View>
                     <View style={[styles.row, {backgroundColor: '#CFD9E8'}]}>
                         <View style={styles.leftColumn}>
                             <AppText style={{fontWeight: 'bold', textAlignVertical: 'center',}}>
-                            
+                            Required Payment
                             </AppText>
                         </View>
                         <View style={styles.rightColumn}>
                             <AppText style={{textAlignVertical: 'center'}}>
-                                
+                            USD {contextData.pmt} {contextData.frequency.label}ly
                             </AppText>
                         </View>    
                     </View>
