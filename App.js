@@ -40,6 +40,7 @@ export default function App() {
   const [riskScore,setRiskScore]= useState(0);
   const [futValue,setFutValue]= useState(1000);
   const [tHorizon,setTHorizon]= useState(10.0);
+  const [nPer,setnPer]= useState(10);
   const [frequency,setFrequency]= useState({label:"Month",value:12});
   const [pmt,setPmt]= useState(100);
   const [InitCont,setInitCont]= useState(0);
@@ -54,8 +55,10 @@ export default function App() {
   const req=AnnuityofFV(parseInt(fund.return),frequency.value,tHorizon,futValue);
   setReqPmt(req);
   setExpVal(exp);
+  setnPer(parseInt(frequency.value*tHorizon));
    console.log("Expected FV",parseInt(fund.return),frequency.value,tHorizon,pmt,exp);
    console.log("Required PMT",parseInt(fund.return),frequency.value,tHorizon,futValue,req);
+
    
        
        }, [frequency,tHorizon,pmt,futValue,fund])

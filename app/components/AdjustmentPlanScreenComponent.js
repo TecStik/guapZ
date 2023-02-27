@@ -80,7 +80,7 @@ function AdjustmentPlanScreenComponent({handleAcceptAdjustment},Otherprops) {
                 <SliderComponent
                     high={100000}
                     low={minCont}
-                    title={'Ruppes'}
+                    title={'Rupees'}
                     onPress={handleSlider1}
                     value={sliderData1}
                 />
