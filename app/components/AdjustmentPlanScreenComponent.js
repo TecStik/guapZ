@@ -12,6 +12,9 @@ function AdjustmentPlanScreenComponent({handleAcceptAdjustment},Otherprops) {
     const [sliderData1, setSliderData1] = useState(contextData.pmt);
     const [sliderData2, setSliderData2] = useState(contextData.tHorizon);
     const [sliderData3, setSliderData3] = useState(contextData.futValue);
+    const [max, setMax] = useState(contextData.futValue);
+    const [minCont, setMinCont] = useState(contextData.pmt);
+    const [minTime, setMinTime] = useState(contextData.tHorizon);
 
     const handleSlider1=(sliderData)=>{
         setSliderData1(sliderData);
@@ -76,7 +79,7 @@ function AdjustmentPlanScreenComponent({handleAcceptAdjustment},Otherprops) {
                 <AppText>Change {contextData.frequency.label}ly Contribution</AppText>
                 <SliderComponent
                     high={100000}
-                    low={0}
+                    low={minCont}
                     title={'Ruppes'}
                     onPress={handleSlider1}
                     value={sliderData1}
@@ -85,7 +88,7 @@ function AdjustmentPlanScreenComponent({handleAcceptAdjustment},Otherprops) {
                 <AppText>Change Time Horizon</AppText>
                 <SliderComponent
                     high={240}
-                    low={0}
+                    low={minTime}
                     title={'Month'}
                     onPress={handleSlider2}
                     value={sliderData2}
@@ -93,7 +96,7 @@ function AdjustmentPlanScreenComponent({handleAcceptAdjustment},Otherprops) {
 
                 <AppText>Change Target Amount</AppText>
                 <SliderComponent
-                    high={1000000}
+                    high={max}
                     low={0}
                     title={'Rupees'}
                     onPress={handleSlider3}
