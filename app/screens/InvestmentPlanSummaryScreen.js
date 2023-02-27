@@ -32,6 +32,11 @@ function InvestmentPlanSummaryScreen(props) {
         setShowAdjust(true);
         setShowPlan(false);
     }
+    const handleAcceptAdjustment=async()=>{
+        console.log("Accepted Adjustment");
+        setShowAdjust(false);
+        setShowPlan(true);
+    }
 
     return (
         <Screen>
@@ -40,8 +45,8 @@ function InvestmentPlanSummaryScreen(props) {
             <GuazBackContainer/>
 
 {(showAdjust)?
-    <AdjustmentPlanScreenComponent setShowPlan={setShowPlan}/>:<></>
-//  <FundComponent setShowPlan={setShowPlan} fund={funds[0]}/>:
+    <AdjustmentPlanScreenComponent handleAcceptAdjustment={handleAcceptAdjustment}/>:<></>
+
 
 }
 {(showFunds)?
