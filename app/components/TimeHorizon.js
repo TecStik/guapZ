@@ -10,6 +10,7 @@ import StoreContext from '../screens/GlobalState';
 function TimeHorizon(props) {
   const contextData = useContext(StoreContext);
     const [value, setValue] =useState('');
+    const [icon, setIcon] =useState(contextData.icon);
 
     const handleProceed=()=>{
       contextData.setTHorizon(parseInt(value));
@@ -23,7 +24,7 @@ function TimeHorizon(props) {
         <View style={styles.header}>
             <View style={styles.rightContainer}>
                 <Image
-                    source={require('../assets/custom.png')}
+                    source={icon.image}
                     style={{width: 50, height: 50}}
                 />
             </View>

@@ -36,6 +36,11 @@ import FundComponentListScreen from './app/components/FundComponentListScreen';
 
 export default function App() {
   const [goals,setGoals]= useState(["testing"]);
+  const [icon, setIcon] =useState({
+    id: 6,//
+    title: 'Custom',
+    image: require('./app/assets/custom.png') 
+  });
   const [step,setStep]= useState(0);
   const [riskScore,setRiskScore]= useState(0);
   const [futValue,setFutValue]= useState(1000);
@@ -87,7 +92,7 @@ export default function App() {
     // <NormalRedemptionScreen/>
    // <NormalRedemptionScreen2/>
 
-    <StoreProvider value={{  goals,setGoals,step,setStep,riskScore,setRiskScore,futValue,setFutValue,tHorizon,setTHorizon,frequency,setFrequency,profitRate,setProfitRate,fund,setFund,pmt,setPmt,expVal,setExpVal }}>
+    <StoreProvider value={{  goals,setGoals,icon, setIcon,step,setStep,riskScore,setRiskScore,futValue,setFutValue,tHorizon,setTHorizon,frequency,setFrequency,profitRate,setProfitRate,fund,setFund,pmt,setPmt,expVal,setExpVal }}>
   <NavigationContainer>
       <AuthNavigator/>
     </NavigationContainer>

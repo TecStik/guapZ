@@ -1,5 +1,5 @@
-import React from 'react';
-
+import React, {useState,useContext} from 'react';
+import StoreContext from './GlobalState'
 import { View, StyleSheet, FlatList } from 'react-native';
 import BackContainer from '../components/BackContainer';
 import Banner from '../components/Banner';
@@ -44,17 +44,20 @@ const listings = [
 
 
 function MultipleChoiceScreen(props) {
+  const contextData = useContext(StoreContext);
   // console.log("propsin Mutiple coice",props)
 
   const handlePress=(item)=>{
     console.log(item)
+    contextData.setIcon(item);
+    props.navigation.navigate("TVM");
   }
 
   return (
     <Screen>
         <BackContainer navigation={props.navigation} title={" None"}/>
         <Banner/>
-        {/* <FlatList 
+        <FlatList 
             data={listings}
             keyExtractor={listing => listing.id.toString()}
             numColumns={2}
@@ -66,7 +69,7 @@ function MultipleChoiceScreen(props) {
                   onPress={()=>handlePress(item)}
                 /> 
             } 
-        /> */}
+        />
 
         <MultipleChoiceScreenComponent/>
     </Screen>
