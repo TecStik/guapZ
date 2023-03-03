@@ -5,8 +5,9 @@ import BackContainer from '../components/BackContainer';
 import Banner from '../components/Banner';
 import SmallImageAppButton from '../components/SmallImageAppButton';
 import Screen from '../components/Screen';
+import OptionScreenComponent from '../components/OptionScreenComponent';
 import MultipleChoiceScreenComponent from '../components/MultipleChoiceScreenComponent';
-
+import MultipleOptionScreenComponent from '../components/MultipleOptionScreenComponent';
 
 const listings = [
     {
@@ -45,7 +46,7 @@ const listings = [
 
 function MultipleChoiceScreen(props) {
   const contextData = useContext(StoreContext);
-  // console.log("propsin Mutiple coice",props)
+   console.log("propsin Mutiple coice",contextData);
 
   const handlePress=async(item)=>{
     console.log(item)
@@ -70,8 +71,11 @@ function MultipleChoiceScreen(props) {
                 /> 
             } 
         /> */}
-
-        <MultipleChoiceScreenComponent handlePress={handlePress}/>
+        {(contextData.option==0)?<OptionScreenComponent/>:<></>}
+        {(contextData.option==1)?<MultipleOptionScreenComponent handlePress={handlePress}/>:<></>}
+        {(contextData.option==2)?<MultipleChoiceScreenComponent handlePress={handlePress}/>:<></>}
+        {/* <MultipleChoiceScreenComponent handlePress={handlePress}/> */}
+        
     </Screen>
   );
 }

@@ -41,6 +41,7 @@ export default function App() {
     title: 'Custom',
     image: require('./app/assets/custom.png') 
   });
+  const [option,setOption]= useState(0);
   const [step,setStep]= useState(0);
   const [riskScore,setRiskScore]= useState(0);
   const [futValue,setFutValue]= useState(1000);
@@ -92,7 +93,7 @@ export default function App() {
     // <NormalRedemptionScreen/>
    // <NormalRedemptionScreen2/>
 
-    <StoreProvider value={{  goals,setGoals,icon, setIcon,step,setStep,riskScore,setRiskScore,futValue,setFutValue,tHorizon,setTHorizon,frequency,setFrequency,profitRate,setProfitRate,fund,setFund,pmt,setPmt,expVal,setExpVal }}>
+    <StoreProvider value={{  goals,setGoals,icon, setIcon,step,setStep,riskScore,setRiskScore,futValue,setFutValue,tHorizon,setTHorizon,frequency,setFrequency,profitRate,setProfitRate,fund,setFund,pmt,setPmt,expVal,setExpVal,option,setOption }}>
   <NavigationContainer>
       <AuthNavigator/>
     </NavigationContainer>
