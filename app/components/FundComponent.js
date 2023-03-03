@@ -1,4 +1,4 @@
-import React from 'react';
+import {React,useState} from 'react';
 
 import { View, StyleSheet, Dimensions, Image, Text, Button } from 'react-native';
 import AppButton from './AppButton';
@@ -7,13 +7,15 @@ import AppText from './AppText';
 const {height, width}= Dimensions.get('window');
 
 function FundComponent({handleFundSelect,fund},Otherprops) {
+    console.log("Fund inFundComponent",typeof(fund.icon));
+const[icon,setIcon]=useState(fund.icon);
     return (
         <View style={styles.container}>
             
             <View style={styles.upperContainer}>
                 <View style={styles.logoContainer}>
                     <Image
-                        source={require('../assets/JS_Bank_Logo.png')}
+                        source={icon}
                         style={{width: '100%', height: '60%',}}
                     />
                 </View>

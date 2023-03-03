@@ -126,7 +126,7 @@ contribution:"what will be your periodic contribution"
             description:"Islamic low risk fund",
             return:"12",
             riskScore:"4",
-            icon:""
+            icon:require('../../assets/js.png')
         }
 ,
 {
@@ -134,7 +134,7 @@ contribution:"what will be your periodic contribution"
             description:"Islamic low risk fund",
             return:"30",
             riskScore:"4",
-            icon:""
+            icon:require('../../assets/hbl.png')
 
         },
         {
@@ -142,7 +142,7 @@ contribution:"what will be your periodic contribution"
             description:"Islamic low risk fund",
             return:"25",
             riskScore:"4",
-            icon:""
+            icon:require('../../assets/mcb.png')
 
         }
         ,
@@ -151,7 +151,7 @@ contribution:"what will be your periodic contribution"
             "description":"Islamic low risk fund",
             "return":"15",
             "riskScore":"4",
-            "icon":""
+            icon:require('../../assets/akd.png')
 
         }   
         
