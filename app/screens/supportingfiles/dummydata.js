@@ -122,26 +122,29 @@ contribution:"what will be your periodic contribution"
     ]
      export const funds=[
         {
-            name:"GuapzLowRisk",
-            description:"Islamic low risk fund",
+            name:"JS Investment fund",
+            description:"JS Islamic Fund",
             return:"12",
             riskScore:"4",
+            rating: "AA-",
             icon:require('../../assets/js.png')
         }
 ,
 {
-            name:"GuapzLowRisk1",
-            description:"Islamic low risk fund",
+            name:"HBL Savings",
+            description:"Islamic Savings Fund",
             return:"30",
             riskScore:"4",
+            rating: "AAA",
             icon:require('../../assets/hbl.png')
 
         },
         {
-            name:"GuapzLowRisk2",
+            name:"MCB Arif Habib",
             description:"Islamic low risk fund",
             return:"25",
             riskScore:"4",
+            rating: "AA+",
             icon:require('../../assets/mcb.png')
 
         }

@@ -41,10 +41,10 @@ const[icon,setIcon]=useState(fund.icon);
                 </View>
                 <View style={styles.middleContainer}>
                     <Text>
-                        NAV
+                        Rating
                     </Text>
                     <Text style={{fontWeight: 'bold'}}>
-                        24,000
+                        {fund.rating}
                     </Text>
                 </View>
                 <View style={styles.rightContainer}>
