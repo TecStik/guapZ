@@ -47,7 +47,7 @@ function MultipleChoiceScreen(props) {
   const contextData = useContext(StoreContext);
   // console.log("propsin Mutiple coice",props)
 
-  const handlePress=(item)=>{
+  const handlePress=async(item)=>{
     console.log(item)
     contextData.setIcon(item);
     props.navigation.navigate("TVM");
@@ -57,7 +57,7 @@ function MultipleChoiceScreen(props) {
     <Screen>
         <BackContainer navigation={props.navigation} title={" None"}/>
         <Banner/>
-        <FlatList 
+        {/* <FlatList 
             data={listings}
             keyExtractor={listing => listing.id.toString()}
             numColumns={2}
@@ -69,9 +69,9 @@ function MultipleChoiceScreen(props) {
                   onPress={()=>handlePress(item)}
                 /> 
             } 
-        />
+        /> */}
 
-        <MultipleChoiceScreenComponent/>
+        <MultipleChoiceScreenComponent handlePress={handlePress}/>
     </Screen>
   );
 }

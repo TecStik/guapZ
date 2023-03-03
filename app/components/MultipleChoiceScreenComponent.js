@@ -38,11 +38,13 @@ const listings = [
     },
   ];
 
-function MultipleChoiceScreenComponent(props) {
+function MultipleChoiceScreenComponent({handlePress}) {
     
-    const handlePress=(item)=>{
-        console.log(item)
-      }
+  // const handlePress=(item)=>{
+  //   console.log(item)
+  //   contextData.setIcon(item);
+  //   props.navigation.navigate("TVM");
+  // }
 
     return (
         <FlatList 
