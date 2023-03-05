@@ -1,6 +1,8 @@
 import React, { useState,useContext } from 'react';
 
-import { View, StyleSheet, Image } from 'react-native';
+import { View, StyleSheet, Image, Button, Text } from 'react-native';
+import DateTimePicker from '@react-native-community/datetimepicker';
+
 import AppButton from './AppButton';
 import AppText from './AppText';
 import AppTextInput from './AppTextInput';
@@ -11,6 +13,19 @@ function TimeHorizon(props) {
   const contextData = useContext(StoreContext);
     const [value, setValue] =useState('');
     const [icon, setIcon] =useState(contextData.icon);
+
+    const [datePicker, setDatePicker] = useState(false);
+    const [date, setDate] = useState(new Date());
+
+    const showDatePicker=()=> {
+      setDatePicker(true);
+    };
+
+    const onDateSelected = (event, value)=> {
+      setDate(value);
+      setDatePicker(false);
+    };
+
 
     const handleProceed=()=>{
       contextData.setTHorizon(parseInt(value));
@@ -45,6 +60,26 @@ function TimeHorizon(props) {
             title={'Proceed'}
             onPress={handleProceed}
         />
+
+
+{datePicker && (
+          <DateTimePicker
+            value={date}
+            mode={'date'}
+            display={Platform.OS === 'ios' ? 'spinner' : 'default'}
+            is24Hour={true}
+            onChange={onDateSelected}
+            // style={styleSheet.datePicker}
+          />
+        )}
+
+{!datePicker && (
+          <View style={{ margin: 10 }}>
+            <Button title="Show Date Picker" color="green" onPress={showDatePicker} />
+          </View>
+        )}
+
+<Text >Date = {date.toDateString()}</Text>
 
     </View>
   );

@@ -33,6 +33,7 @@ import TickBox from './app/components/TickBox';
 import NormalRedemptionScreen2 from './app/screens/NormalRedemptionScreen2';
 import FundComponent from './app/components/FundComponent';
 import FundComponentListScreen from './app/components/FundComponentListScreen';
+import TimeHorizon from './app/components/TimeHorizon';
 
 export default function App() {
   const [goals,setGoals]= useState(["testing"]);
@@ -92,6 +93,7 @@ export default function App() {
     // <ReportScreen/>
     // <NormalRedemptionScreen/>
    // <NormalRedemptionScreen2/>
+  //  <TimeHorizon/>
 
     <StoreProvider value={{  goals,setGoals,icon, setIcon,step,setStep,riskScore,setRiskScore,futValue,setFutValue,tHorizon,setTHorizon,frequency,setFrequency,profitRate,setProfitRate,fund,setFund,pmt,setPmt,expVal,setExpVal,option,setOption }}>
   <NavigationContainer>
