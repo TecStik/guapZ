@@ -24,7 +24,8 @@ function TimeHorizon(props) {
     const onDateSelected = (event, value)=> {
       setDate(value);
       let currentDate= new Date();
-      let difference= calcDate(value,currentDate);
+      let futDate=(new Date("2027-05-01"));
+      let difference= calcDate(futDate,currentDate);
 
       console.log("CurrentDate",currentDate,"Future Date",value);
       console.log("Difference",difference);
@@ -35,20 +36,23 @@ function TimeHorizon(props) {
       var day = 1000 * 60 * 60 * 24;
     
   
-      var days = (diff/day);
+      var days = Math.floor(diff/day);
      
-      var months = (days/31);
-      var years = (months/12);
+      // var months = Math.floor(days/31);
+      // var years = Math.floor(months/12);
   
-      var message = date2.toDateString();
-      message += " was "
-      message += days + " days " 
-      message += months + " months "
-      message += years + " years ago \n"
-     let _month= months% years;
-      let _day= days% _month;
-      console.log("Difference in YY-MM-DD",date1.toString(),date2.toString(),years,_month,_day);
-  
+      // var message = date2.toDateString();
+      // message += " was "
+      // message += days + " days " 
+      // message += months + " months "
+      // message += years + " years ago \n";
+
+let year=Math.floor(days/365);
+     let _month= Math.floor(days% 365);
+    let month= (_month/30);
+      let _day= days % month;
+      console.log("Difference in YY-MM-DD",date1.toString(),date2.toString());
+      console.log("Difference in YY-MM-DD",year,_month,_day);
       return message
       }
 
