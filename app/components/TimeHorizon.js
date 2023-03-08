@@ -16,6 +16,7 @@ function TimeHorizon(props) {
 
     const [datePicker, setDatePicker] = useState(false);
     const [date, setDate] = useState(new Date());
+    const [pickedDate, setPickedDate] = useState('Time Horizon')
 
     const showDatePicker=()=> {
       setDatePicker(true);
@@ -23,6 +24,8 @@ function TimeHorizon(props) {
 
     const onDateSelected = (event, value)=> {
       setDate(value);
+      setPickedDate(value.toDateString());
+      
       setDatePicker(false);
     };
 
@@ -49,20 +52,31 @@ function TimeHorizon(props) {
                 What is your target time Horizon?
             </AppText>
         </View>
-        <AppTextInput
+        {/* <AppTextInput
             icon='cash-multiple'
             placeholder={'Time Horizon'}
             keyboardType='numeric'
             value={value}
             onChangeText={setValue}
-        />
+        /> */}
+
+        <View>
+            <AppButton
+              // title={date.toDateString()}
+              title={pickedDate}
+              onPress={showDatePicker}
+            />
+        </View>
+
+
+
         <AppButton
             title={'Proceed'}
             onPress={handleProceed}
         />
 
 
-{datePicker && (
+        {datePicker && (
           <DateTimePicker
             value={date}
             mode={'date'}
@@ -73,13 +87,11 @@ function TimeHorizon(props) {
           />
         )}
 
-{!datePicker && (
-          <View style={{ margin: 10 }}>
-            <Button title="Show Date Picker" color="green" onPress={showDatePicker} />
-          </View>
-        )}
 
-<Text >Date = {date.toDateString()}</Text>
+          
+        
+
+      <Text >Date = {date.toDateString()}</Text>
 
     </View>
   );
