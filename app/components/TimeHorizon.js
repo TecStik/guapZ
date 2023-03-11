@@ -16,7 +16,6 @@ function TimeHorizon(props) {
 
     const [datePicker, setDatePicker] = useState(false);
     const [date, setDate] = useState(new Date());
-    const [pickedDate, setPickedDate] = useState('Time Horizon')
 
     const showDatePicker=()=> {
       setDatePicker(true);
@@ -24,11 +23,38 @@ function TimeHorizon(props) {
 
     const onDateSelected = (event, value)=> {
       setDate(value);
-      setPickedDate(value.toDateString());
-      
+      let currentDate= new Date();
+      let futDate=(new Date("2027-05-01"));
+      let difference= calcDate(futDate,currentDate);
+
+      console.log("CurrentDate",currentDate,"Future Date",value);
+      console.log("Difference",difference);
       setDatePicker(false);
     };
+ async   function calcDate(date1,date2) {
+      var diff = Math.floor(date1.getTime() - date2.getTime());
+      var day = 1000 * 60 * 60 * 24;
+    
+  
+      var days = Math.floor(diff/day);
+     
+      // var months = Math.floor(days/31);
+      // var years = Math.floor(months/12);
+  
+      // var message = date2.toDateString();
+      // message += " was "
+      // message += days + " days " 
+      // message += months + " months "
+      // message += years + " years ago \n";
 
+let year=Math.floor(days/365);
+     let _month= Math.floor(days% 365);
+    let month= (_month/30);
+      let _day= days % month;
+      console.log("Difference in YY-MM-DD",date1.toString(),date2.toString());
+      console.log("Difference in YY-MM-DD",year,_month,_day);
+      return message
+      }
 
     const handleProceed=()=>{
       contextData.setTHorizon(parseInt(value));
@@ -52,31 +78,20 @@ function TimeHorizon(props) {
                 What is your target time Horizon?
             </AppText>
         </View>
-        {/* <AppTextInput
-            icon='cash-multiple'
-            placeholder={'Time Horizon'}
-            keyboardType='numeric'
-            value={value}
-            onChangeText={setValue}
-        /> */}
+        {!datePicker && (
+          <View style={{ margin: 10 }}>
+            <Button title="Show Date Picker" color="green" onPress={showDatePicker} />
+          </View>
+        )}
 
-        <View>
-            <AppButton
-              // title={date.toDateString()}
-              title={pickedDate}
-              onPress={showDatePicker}
-            />
-        </View>
-
-
-
+<Text >You will be able to achieve your goal in 5 years 2 months 6 days</Text>
         <AppButton
             title={'Proceed'}
             onPress={handleProceed}
         />
 
 
-        {datePicker && (
+{datePicker && (
           <DateTimePicker
             value={date}
             mode={'date'}
@@ -87,11 +102,13 @@ function TimeHorizon(props) {
           />
         )}
 
+{/* {!datePicker && (
+          <View style={{ margin: 10 }}>
+            <Button title="Show Date Picker" color="green" onPress={showDatePicker} />
+          </View>
+        )} */}
 
-          
-        
 
-      <Text >Date = {date.toDateString()}</Text>
 
     </View>
   );
