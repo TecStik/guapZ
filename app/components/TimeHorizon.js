@@ -7,6 +7,8 @@ import AppButton from './AppButton';
 import AppText from './AppText';
 import AppTextInput from './AppTextInput';
 import StoreContext from '../screens/GlobalState';
+import Icon from './Icon';
+import colors from '../config/colors';
 
 
 function TimeHorizon(props) {
@@ -79,8 +81,14 @@ let year=Math.floor(days/365);
             </AppText>
         </View>
         {!datePicker && (
-          <View style={{ margin: 10 }}>
-            <Button title="Show Date Picker" color="green" onPress={showDatePicker} />
+          <View style={{ margin: 0 }}>
+            <Icon
+              iconName='calendar-month-outline'
+              iconColor={colors.primary}
+              // title='Show Date Picker'
+              onPress={showDatePicker}
+            />
+            {/* <Button title="Show Date Picker" color="green" onPress={showDatePicker} /> */}
           </View>
         )}
 
