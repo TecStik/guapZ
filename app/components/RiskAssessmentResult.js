@@ -17,6 +17,9 @@ function RiskAssessmentResult({navigation},props)  {
        // console.log(count,navigation,props);
         navigation.navigate("Investment Plan SummaryScreen")
     }
+    const handleRetake=()=>{
+        console.log("press Retake");
+    }
 
     const handleUp=()=>{
         if (count <10){
@@ -60,11 +63,21 @@ function RiskAssessmentResult({navigation},props)  {
             <View style={{height: 50}}>
                 <AppText>Out of 10, can adjust upto two nothches</AppText>
             </View>
-            <View style={{width: '80%',}}>
-                <AppButton
-                    title={'Proceed'}
-                    onPress={handleProceed}
-                />
+            <View style={{width: '100%', flexDirection:'row', justifyContent: 'space-around'}}>
+                <View style={{width: '40%'}}>
+                    <AppButton
+                        title={'Retake'}
+                        onPress={handleRetake}
+                    />
+
+                </View>
+                <View style={{width: '40%'}}>
+                    <AppButton
+                        title={'Proceed'}
+                        onPress={handleProceed}
+                    />
+
+                </View>
             </View>
         </View>
   );
